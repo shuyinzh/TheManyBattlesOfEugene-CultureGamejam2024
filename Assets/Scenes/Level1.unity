@@ -832,10 +832,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Deck:
   - {fileID: 7284172791928210970, guid: e5eb105f68de046bb974e44cb7bfdb9c, type: 3}
+  - {fileID: 7522721459932201347, guid: 5f8abe024eaa34507bc371f9d5887ddb, type: 3}
   - {fileID: 6780665972070881515, guid: fbd07361df5fe453d8110c35a9e1a331, type: 3}
   - {fileID: 6134320873080495690, guid: db2d98df75aa249e0a4e2c46dfd4eae3, type: 3}
-  - {fileID: 2687611264887504103, guid: c54dc3eecd85e4c6a9ea1d886599c20e, type: 3}
-  - {fileID: 3967289286662263859, guid: 28cf6e2d4bfb045be8c2b576a1938ab5, type: 3}
+  - {fileID: 4231247820201864888, guid: e08f9fce71632402ba0f63aeaa327afd, type: 3}
   DrawPile: []
   Hand: []
   DiscardPile: []

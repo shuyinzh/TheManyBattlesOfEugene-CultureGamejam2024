@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -42,6 +43,7 @@ public class DeckSystem : MonoBehaviour
         {
             var drawnCard = DrawPile[0];
             DrawPile.RemoveAt(0);
+            Debug.Log("Drawn card: " + drawnCard);
             if (Hand.Count >= MAX_HAND_SIZE)
             {
                 DiscardPile.Add(drawnCard);
@@ -53,7 +55,7 @@ public class DeckSystem : MonoBehaviour
         else
         {
             ShuffleDiscardPileIntoDeck();
-            DrawCard();
+            DrawCards();
         }
     }
     
@@ -68,9 +70,9 @@ public class DeckSystem : MonoBehaviour
     {
         for (int i = 0; i < DrawPile.Count; i++)
         {
-            var temp = Deck[i];
+            var temp = DrawPile[i];
             int randomIndex = Random.Range(i, DrawPile.Count);
-            DrawPile[i] = Deck[randomIndex];
+            DrawPile[i] = DrawPile[randomIndex];
             DrawPile[randomIndex] = temp;
         }
     }

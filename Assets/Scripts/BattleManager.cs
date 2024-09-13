@@ -37,7 +37,7 @@ public class BattleManager : MonoBehaviour
 
         Hand = Player.deckSystem.Hand;
         foreach (GameObject item in Hand)
-        {
+        { 
             Instantiate(item, new Vector3(0,0,0), Quaternion.identity, cardHand.transform);
         }
         
