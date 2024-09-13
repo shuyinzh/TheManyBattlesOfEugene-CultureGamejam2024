@@ -13,8 +13,8 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         // load infos
-        playerHealthText.text = player.health.currentHP + " / " + player.health.maxHP;
-        enemyHealthText.text = enemy.health.currentHP + " / " + enemy.health.maxHP;
+        playerHealthText.text = player.Health.currentHP + " / " + player.Health.maxHP;
+        enemyHealthText.text = enemy.Health.currentHP + " / " + enemy.Health.maxHP;
 
         {        
             // player turn
