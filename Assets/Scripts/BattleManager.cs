@@ -2,6 +2,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+public enum BattleState
+{
+    Initial,
+    PlayerTurn,
+    EugeneTurn,
+    EnemyTurn
+}
+
 public class BattleManager : MonoBehaviour
 {
     public Player Player;
@@ -9,6 +17,11 @@ public class BattleManager : MonoBehaviour
     public NPC Enemy;
     public TMP_Text playerHealthText; 
     public TMP_Text enemyHealthText; 
+    public GameObject cardHand;
+
+    // private List<Card> Hand = new List<Card>();
+
+    private BattleState state = BattleState.Initial;
 
     void Start()
     {
@@ -16,6 +29,17 @@ public class BattleManager : MonoBehaviour
         playerHealthText.text = Eugene.Health.currentHP + " / " + Eugene.Health.maxHP;
         enemyHealthText.text = Enemy.Health.currentHP + " / " + Enemy.Health.maxHP;
 
+        Player.StartMatch();
+
+        state = BattleState.PlayerTurn;
+
+        //Hand = Player.DeckSystem.Hand;
+        /*foreach (Card item in Hand)
+        {
+            // Instantiate(item, cardHand);
+        }
+        */
+        
         {        
             // player turn
                 // draw cards

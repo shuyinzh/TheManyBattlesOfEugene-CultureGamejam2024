@@ -9,7 +9,7 @@ public class Player: MonoBehaviour
         deckSystem = GetComponent<DeckSystem>();
     }
 
-    void StartMatch()
+    public void StartMatch()
     {
         deckSystem.StartMatch();
     }
