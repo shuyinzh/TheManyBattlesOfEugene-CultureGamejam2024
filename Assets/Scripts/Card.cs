@@ -131,7 +131,18 @@ public class Cards
             Effects.Taunt
         }
     };
-    
-    
-    
+
+    public static Card Church = new()
+    {
+        Name = "Kirche in Unterach am Attersee",
+        Artist = Artists.Klimt,
+        Description = "A painting by the Austrian symbolist painter Gustav Klimt.",
+        Effects = new List<Effect>()
+        {
+            Effects.Sleep
+        }
+    };
+
+
+
 }
