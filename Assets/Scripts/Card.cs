@@ -21,6 +21,7 @@ public class Card
     public List<Effect> Effects;
     public string Description;
     public Artist Artist;
+    public int Cost = 1;
 }
 
 public class Cards
