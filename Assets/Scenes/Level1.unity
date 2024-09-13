@@ -666,6 +666,7 @@ GameObject:
   - component: {fileID: 469516307}
   - component: {fileID: 469516309}
   - component: {fileID: 469516308}
+  - component: {fileID: 469516310}
   m_Layer: 6
   m_Name: DrawPile
   m_TagString: Untagged
@@ -731,6 +732,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469516306}
   m_CullTransparentMesh: 1
+--- !u!114 &469516310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469516306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337f4bc6f626148d48bfe42389f8c13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckSystem: {fileID: 577466653}
+  deckType: 2
 --- !u!1001 &566150111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,6 +860,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!1 &577466652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577466654}
+  - component: {fileID: 577466653}
+  m_Layer: 0
+  m_Name: DeckSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &577466653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577466652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76a09cb6be274cc2b1e82164082b858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &577466654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577466652}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &596953035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2374307350109796332, guid: 199f9627a7a4645dcb97e00f6b719607, type: 3}
@@ -2682,6 +2741,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2023353148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2023353149}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2023353149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023353148}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 845.16046, y: 544.119, z: -10.22767}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2078658792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2807,6 +2897,7 @@ GameObject:
   - component: {fileID: 2144947603}
   - component: {fileID: 2144947605}
   - component: {fileID: 2144947604}
+  - component: {fileID: 2144947606}
   m_Layer: 6
   m_Name: DiscardPile
   m_TagString: Untagged
@@ -2872,6 +2963,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144947602}
   m_CullTransparentMesh: 1
+--- !u!114 &2144947606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144947602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337f4bc6f626148d48bfe42389f8c13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckSystem: {fileID: 577466653}
+  deckType: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2882,3 +2987,5 @@ SceneRoots:
   - {fileID: 1328090383}
   - {fileID: 278329841}
   - {fileID: 2002458706}
+  - {fileID: 2023353149}
+  - {fileID: 577466654}
