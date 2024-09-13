@@ -42,6 +42,7 @@ public class DeckSystem : MonoBehaviour
         if (DrawPile.Count > 0)
         {
             var drawnCard = DrawPile[0];
+            Debug.Log("" + drawnCard.name);
             DrawPile.RemoveAt(0);
             Debug.Log("Drawn card: " + drawnCard);
             if (Hand.Count >= MAX_HAND_SIZE)
