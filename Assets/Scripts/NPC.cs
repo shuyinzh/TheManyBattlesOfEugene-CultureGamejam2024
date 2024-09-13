@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Enemy : Battler
+public class NPC : Battler
 {
     
 }

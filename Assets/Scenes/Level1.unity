@@ -1460,8 +1460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c084a08a8703a4b5285a2a9851b0e54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1946843355}
-  enemy: {fileID: 1454479314}
+  Player: {fileID: 1626091748}
+  Eugene: {fileID: 1946843357}
+  Enemy: {fileID: 1454479314}
   playerHealthText: {fileID: 125693660}
   enemyHealthText: {fileID: 1685472561}
 --- !u!1 &1237557689
@@ -2161,7 +2162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154c2d337d043969edfeaf1136e498f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1454479315}
+  Health: {fileID: 1454479315}
 --- !u!114 &1454479315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2176,6 +2177,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 20
   currentHP: 20
+--- !u!1 &1626091746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626091747}
+  - component: {fileID: 1626091748}
+  m_Layer: 5
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1626091747
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626091746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1711097268}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1626091748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626091746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb30b31e04c7444c85aa5aae8cac4613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckSystem: {fileID: 577466653}
 --- !u!1 &1685472559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,6 +2461,7 @@ RectTransform:
   - {fileID: 1182179992}
   - {fileID: 1237557690}
   - {fileID: 151420367}
+  - {fileID: 1626091747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2696,10 +2747,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1946843354}
   - component: {fileID: 1946843353}
-  - component: {fileID: 1946843355}
   - component: {fileID: 1946843356}
+  - component: {fileID: 1946843357}
   m_Layer: 5
-  m_Name: Me
+  m_Name: Eugene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2773,20 +2824,6 @@ Transform:
   - {fileID: 125693659}
   m_Father: {fileID: 1711097268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1946843355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946843352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb30b31e04c7444c85aa5aae8cac4613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 1946843356}
-  deckSystem: {fileID: 577466653}
 --- !u!114 &1946843356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2801,6 +2838,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 12
   currentHP: 12
+--- !u!114 &1946843357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946843352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0154c2d337d043969edfeaf1136e498f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 1946843356}
 --- !u!1 &1952462482
 GameObject:
   m_ObjectHideFlags: 0

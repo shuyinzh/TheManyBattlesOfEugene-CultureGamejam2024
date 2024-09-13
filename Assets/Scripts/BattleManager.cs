@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BattleManager : MonoBehaviour
 {
-    public Player player;
-    public Enemy enemy;
+    public Player Player;
+    public NPC Eugene;
+    public NPC Enemy;
     public TMP_Text playerHealthText; 
     public TMP_Text enemyHealthText; 
 
     void Start()
     {
         // load infos
-        playerHealthText.text = player.Health.currentHP + " / " + player.Health.maxHP;
-        enemyHealthText.text = enemy.Health.currentHP + " / " + enemy.Health.maxHP;
+        playerHealthText.text = Eugene.Health.currentHP + " / " + Eugene.Health.maxHP;
+        enemyHealthText.text = Enemy.Health.currentHP + " / " + Enemy.Health.maxHP;
 
         {        
             // player turn
