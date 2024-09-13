@@ -12,8 +12,8 @@ public class EnlargeOnHover : MonoBehaviour
     bool enlarging = false;
     bool shrinking = false;
 
-    float enlargeSpeed = 0.1f;
-    float shrinkSpeed = 0.2f;
+    float enlargeSpeed = 50f;
+    float shrinkSpeed = 70f;
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class EnlargeOnHover : MonoBehaviour
         {
             if (transform.localScale.x < enlargedScale.x)
             {
-               transform.localScale += new Vector3(enlargeSpeed, enlargeSpeed, 0);
+               transform.localScale += new Vector3(enlargeSpeed * Time.deltaTime, enlargeSpeed * Time.deltaTime, 0);
             }
             else 
             {
@@ -38,7 +38,7 @@ public class EnlargeOnHover : MonoBehaviour
         {
             if (transform.localScale.x > originalScale.x)
             {
-                transform.localScale -= new Vector3(shrinkSpeed, shrinkSpeed, 0);
+                transform.localScale -= new Vector3(shrinkSpeed * Time.deltaTime, shrinkSpeed * Time.deltaTime, 0);
             }
             else 
             {
