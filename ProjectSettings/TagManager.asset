@@ -44,3 +44,9 @@ TagManager:
   - name: Card
     uniqueID: 4138367743
     locked: 0
+  - name: UI
+    uniqueID: 3326608519
+    locked: 0
+  - name: Overlay
+    uniqueID: 1645324879
+    locked: 0

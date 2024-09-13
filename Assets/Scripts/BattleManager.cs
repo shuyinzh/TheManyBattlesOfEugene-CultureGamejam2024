@@ -17,10 +17,6 @@ public class BattleManager : MonoBehaviour
     public Player Player;
     public NPC Eugene;
     public NPC Enemy;
-    public TMP_Text playerHealthText; 
-    public TMP_Text enemyHealthText;
-    public TMP_Text eugeneName;
-    public TMP_Text enemyName;
     public GameObject cardHand;
 
     public List<GameObject> Hand = new List<GameObject>();
@@ -29,12 +25,6 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        // load infos
-        playerHealthText.text = Eugene.Health.currentHP + " / " + Eugene.Health.maxHP;
-        enemyHealthText.text = Enemy.Health.currentHP + " / " + Enemy.Health.maxHP;
-        eugeneName.text = Eugene.Name;
-        enemyName.text = Enemy.Name;
-
         Player.StartMatch();
 
         state = BattleState.PlayerTurn;
