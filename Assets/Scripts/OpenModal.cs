@@ -5,6 +5,8 @@ using UnityEngine;
 public class OpenModal : MonoBehaviour
 {
     public GameObject[] modals;
+    public GameObject closeButton;
+    private GameObject activeModal; 
 
     public void LoadModal(string modalName)
     {
@@ -13,18 +15,15 @@ public class OpenModal : MonoBehaviour
             if (o.name == modalName)
             {
                 o.SetActive(true);
+                activeModal = o;
+                closeButton.SetActive(true);
             }
         }
     }
 
-    public void CloseModal(string modalName)
+    public void CloseModal()
     {
-        foreach (GameObject o in modals)
-        {
-            if (o.name == modalName)
-            {
-                o.SetActive(false);
-            }
-        }
+        activeModal.SetActive(false);
+        closeButton.SetActive(false);
     }
 }
