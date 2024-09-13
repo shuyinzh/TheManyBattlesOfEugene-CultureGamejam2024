@@ -29,4 +29,22 @@ public class Artists
         Description = "A German painter and etcher."
     };
 
+    public static Artist Parrocel = new()
+    {
+        Name = "Ignace Jacques Parrocel",
+        Description = "A French painter."
+    };
+
+    public static Artist Geffels = new()
+    {
+        Name = "Frans Geffels",
+        Description = "A Flemish painter."
+    };
+
+    public static Artist Wyk = new()
+    {
+        Name = "Jan Wyck",
+        Description = "A Dutch baroque painter."
+    };
+
 }

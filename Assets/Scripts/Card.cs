@@ -46,7 +46,7 @@ public class Cards
             Effects.Weaken
         }
     };
-    
+
     public static Card SleepingManPortrait = new()
     {
         Name = "Porträt eines alten schlafenden Mannes",
@@ -57,7 +57,7 @@ public class Cards
             Effects.Sleep
         }
     };
-    
+
     public static Card ChironAndAchill = new()
     {
         Name = "Der Kentaur Chiron und Achill",
@@ -68,7 +68,7 @@ public class Cards
             Effects.Weaken
         }
     };
-    
+
     public static Card PrinceEugenPortrait = new()
     {
         Name = "Bildnis des Prinzen Eugen von Savoyen",
@@ -79,7 +79,7 @@ public class Cards
             Effects.Sublime
         }
     };
-    
+
     public static Card ElisabethChristinePortrait = new()
     {
         Name = "Elisabeth Christine von Braunschweig-Wolfenbüttel",
@@ -90,7 +90,7 @@ public class Cards
             Effects.Charm
         }
     };
-    
+
     public static Card PrinceEugenCommanderPortrait = new()
     {
         Name = "Prinz Eugen von Savoyen als Feldherr",
@@ -101,7 +101,7 @@ public class Cards
             Effects.Sublime
         }
     };
-    
+
     public static Card Attack = new()
     {
         Name = "Attack",
@@ -111,7 +111,7 @@ public class Cards
             Effects.Attack
         }
     };
-    
+
     public static Card Defense = new()
     {
         Name = "Defense",
@@ -121,7 +121,7 @@ public class Cards
             Effects.Defense
         }
     };
-    
+
     public static Card Taunt = new()
     {
         Name = "Taunt",
@@ -143,6 +143,39 @@ public class Cards
         }
     };
 
+    public static Card BattleVienna = new()
+    {
+        Name = "Türkenschlacht",
+        Artist = Artists.Parrocel,
+        Description = "A painting by the French painter Ignace Jacques Parrocel.",
+        Effects = new List<Effect>()
+        {
+            Effects.Attack
+        },
+        
 
+    };
+
+    public static Card ViennaSiege = new()
+    {
+        Name = "Belagerung Wiens",
+        Artist = Artists.Geffels,
+        Description = "A painting by the Dutch baroque painter Jan Wyck.",
+        Effects = new List<Effect>()
+        {
+            Effects.Defense
+        }
+    };
+
+    public static Card BattleKahlenberg = new()
+    {
+        Name = "Schlacht am Kahlenberg",
+        Artist = Artists.Wyk,
+        Description = "A painting by the Dutch baroque painter Jan Wyck.",
+        Effects = new List<Effect>()
+        {
+            Effects.Attack
+        }
+    };
 
 }
