@@ -1,27 +1,19 @@
 ﻿using UnityEngine;
 
-public class Player: MonoBehaviour
+public class Player: Battler
 {
-    public Health health;
     public DeckSystem deckSystem;
     
     void Start()
     {
-        health = GetComponent<Health>();
+        base.Start();
         deckSystem = GetComponent<DeckSystem>();
     }
 
     void StartMatch()
     {
-        health.Reset();
+        base.StartMatch();
         deckSystem.StartMatch();
     }
 
-    void Update()
-    {
-        if (!health.IsAlive)
-        {
-            Debug.Log("Player is dead!");
-        }
-    }
 }

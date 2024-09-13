@@ -1,20 +1,5 @@
 ﻿using System.Collections.Generic;
 
-/*
- Card Name	Artist	Buff
-The Kiss	Gustav Klimt	Charm
-Die Heimsuchung	Rembrandt van Rijn	Weakened
-Porträt eines alten schlafenden Mannes	Rembrandt van Rijn	Sleeping
-Der Kentaur Chiron und Achill	Giuseppe Maria Crespi	Weakened
-Bildnis des Prinzen Eugen von Savoyen	Johann Gottfried Auerbach	Sublime
-Elisabeth Christine von Braunschweig-Wolfenbüttel	Johann Gottfried Auerbach	Charm
-Prinz Eugen von Savoyen als Feldherr	Johann Gottfried Auerbach	Sublime
-		
-Attack		Attack
-Deffense		Defense
-Taunt/Discourage		Taunt
- */
-
 public class Card
 {
     public string Name;

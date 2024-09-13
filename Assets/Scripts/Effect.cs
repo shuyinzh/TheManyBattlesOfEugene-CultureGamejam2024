@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 public class Effect
 {
@@ -7,7 +8,13 @@ public class Effect
     public string Description;
 
     public List<EffectType> Types;
+
+    public double Value = 0;
+    
+    public int Duration = 1;
+
 }
+
 
 public enum EffectType
 {
@@ -31,6 +38,7 @@ public class Effects
         {
             EffectType.Charm
         }
+        
     };
 
     public static Effect Weaken = new()
@@ -40,7 +48,8 @@ public class Effects
         Types = new List<EffectType>()
         {
             EffectType.Weaken
-        }
+        },
+        Value=0.2 // 20% more damage
     };
 
     public static Effect Sleep = new()
@@ -50,7 +59,8 @@ public class Effects
         Types = new List<EffectType>()
         {
             EffectType.Sleep
-        }
+        },
+        Duration = 2// Max 2 turns
     };
 
     public static Effect Attack = new()
@@ -60,7 +70,9 @@ public class Effects
         Types = new List<EffectType>()
         {
             EffectType.Attack
-        }
+        },
+        Value = 1
+        
     };
 
     public static Effect Heal = new()
@@ -70,7 +82,8 @@ public class Effects
         Types = new List<EffectType>()
         {
             EffectType.Heal
-        }
+        },
+        Value = 1
     };
 
     public static Effect Taunt = new()
@@ -80,7 +93,8 @@ public class Effects
         Types = new List<EffectType>()
         {
             EffectType.Taunt
-        }
+        },
+        Value = 1
     };
     public static Effect Defense = new()
     {
@@ -89,7 +103,9 @@ public class Effects
         Types = new List<EffectType>()
         {
             EffectType.Defense
-        }
+        },
+        Value = 1
+        
     };
     public static Effect Sublime = new()
     {
@@ -98,6 +114,7 @@ public class Effects
         Types = new List<EffectType>()
         {
             EffectType.Sublime
-        }
+        },
+        Value = 2.0
     };
 }
