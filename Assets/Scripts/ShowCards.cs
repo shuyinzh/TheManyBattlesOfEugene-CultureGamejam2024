@@ -36,6 +36,7 @@ public class ShowCards : MonoBehaviour
         {
             Debug.Log(cards[i].name + ", position: " + (firstCardPosition + new Vector3((i % 7) * 20, (float) Math.Floor(i/7.0f) * 10, 0)));
             Instantiate(cards[i], firstCardPosition + new Vector3((i % 7) * 100, (float) Math.Floor(i/7.0f) * 50, 0), Quaternion.identity, transform);
+            
         }
         
     }

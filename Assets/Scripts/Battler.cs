@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Battler : MonoBehaviour
 {
     public Health Health;
-
+    public string Name;
     public List<Effect> Effects {get; private set;}
     public void Start()
     {
