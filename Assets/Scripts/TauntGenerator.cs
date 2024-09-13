@@ -12,6 +12,7 @@ public class TauntGenerator : MonoBehaviour
     private string model = "tts-1";
     private string currentTaunt = "";
     public AudioSource audioSource;
+
     private string apiKey =
         "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";
 
@@ -59,7 +60,8 @@ public class TauntGenerator : MonoBehaviour
 
         StartCoroutine(SendOpenAIRequest(
             "I need a one liner taunt or joke from the perspective of Eugene von Savoyen, please make it up to 10 words long and don't add anything but the joke/taunt, no parenthesis, no formatting, no apostrophes, just the quote, as an added context of the situation Eugen is in, use this: " +
-            extraInfo[eI] + " Like I said, only the taunt/joke, this is very important and up to 10 words and end with three exclamation marks!"));
+            extraInfo[eI] +
+            " Like I said, only the taunt/joke, this is very important and up to 10 words and end with three exclamation marks!"));
     }
 
     // Coroutine to send the request
@@ -108,7 +110,7 @@ public class TauntGenerator : MonoBehaviour
             GenerateSpeech(currentTaunt);
         }
     }
-    
+
     // Function to generate speech and play it
     public void GenerateSpeech(string text)
     {
@@ -169,10 +171,5 @@ public class TauntGenerator : MonoBehaviour
                 audioSource.Play();
             }
         }
-    }
-
-    private void Start()
-    {
-        GenerateTaunt(currentBattle.Battle1);
     }
 }
