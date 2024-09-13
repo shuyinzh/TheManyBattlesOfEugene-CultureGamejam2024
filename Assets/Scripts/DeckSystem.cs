@@ -4,12 +4,23 @@ using UnityEngine;
 public class DeckSystem : MonoBehaviour
 {
     
-    private static int MAX_HAND_SIZE = 5;
-    private static int MAX_DECK_SIZE = 10;
+    private const int MAX_HAND_SIZE = 5;
+    private const int MIN_DECK_SIZE = 5;
+    private const int MAX_DECK_SIZE = 10;
     
-    private List<Card> deck;
-    private List<Card> hand;
-    private List<Card> discardPile;
+    
+    public List<Card> Deck = new()
+    {
+        Cards.Attack,
+        Cards.Attack,
+        Cards.Defense,
+        Cards.Defense,
+        Cards.Taunt,
+    }; 
+    public List<Card> DrawPile = new();
+    public List<Card> Hand = new();
+    public List<Card> DiscardPile = new();
+    
     
     // Start is called before the first frame update
     void Start()
@@ -23,12 +34,27 @@ public class DeckSystem : MonoBehaviour
         
     }
     
+    public void DrawCards(int numCards = MAX_HAND_SIZE)
+    {
+        for (int i = 0; i < numCards; i++)
+        {
+            DrawCard();
+        }
+    }
+   
     public void DrawCard()
     {
-        if (deck.Count > 0)
+        if (DrawPile.Count > 0)
         {
-            hand.Add(deck[0]);
-            deck.RemoveAt(0);
+            var drawnCard = DrawPile[0];
+            DrawPile.RemoveAt(0);
+            if (Hand.Count >= MAX_HAND_SIZE)
+            {
+                DiscardPile.Add(drawnCard);
+            } else {
+                Hand.Add(drawnCard);
+            }
+            
         }
         else
         {
@@ -39,23 +65,53 @@ public class DeckSystem : MonoBehaviour
     
     public void ShuffleDiscardPileIntoDeck()
     {
-        deck.AddRange(discardPile);
-        discardPile.Clear();
-        ShuffleDeck();
+        DrawPile.AddRange(DiscardPile);
+        DiscardPile.Clear();
+        ShuffleDrawPile();
     }
     
-    public void ShuffleDeck()
+    public void ShuffleDrawPile()
     {
-        for (int i = 0; i < deck.Count; i++)
+        for (int i = 0; i < DrawPile.Count; i++)
         {
-            Card temp = deck[i];
-            int randomIndex = Random.Range(i, deck.Count);
-            deck[i] = deck[randomIndex];
-            deck[randomIndex] = temp;
+            Card temp = Deck[i];
+            int randomIndex = Random.Range(i, DrawPile.Count);
+            DrawPile[i] = Deck[randomIndex];
+            DrawPile[randomIndex] = temp;
         }
     }
     
     
+    public void PlayHandCard(int index)
+    {
+        if (index >= 0 && index < Hand.Count)
+        {
+            Card card = Hand[index];
+            Hand.RemoveAt(index);
+            DiscardPile.Add(card);
+            applyCardEffect(card);
+        }
+    }
+
+    private void applyCardEffect(Card card)
+    {
+        throw new System.NotImplementedException();
+    }
     
-    
+    public void DiscardHand()
+    {
+        DiscardPile.AddRange(Hand);
+        Hand.Clear();
+    }
+
+    public void StartMatch()
+    {
+        DiscardPile.Clear();
+        DrawPile.Clear();
+        Hand.Clear();
+        DrawPile.AddRange(Deck);
+        ShuffleDrawPile();
+        DrawCards();
+        
+    }
 }
