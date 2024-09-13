@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -19,7 +21,7 @@ public class BattleManager : MonoBehaviour
     public TMP_Text enemyHealthText; 
     public GameObject cardHand;
 
-    // private List<Card> Hand = new List<Card>();
+    public List<GameObject> Hand = new List<GameObject>();
 
     private BattleState state = BattleState.Initial;
 
@@ -33,12 +35,11 @@ public class BattleManager : MonoBehaviour
 
         state = BattleState.PlayerTurn;
 
-        //Hand = Player.DeckSystem.Hand;
-        /*foreach (Card item in Hand)
+        Hand = Player.deckSystem.Hand;
+        foreach (GameObject item in Hand)
         {
-            // Instantiate(item, cardHand);
+            Instantiate(item, new Vector3(0,0,0), Quaternion.identity, cardHand.transform);
         }
-        */
         
         {        
             // player turn

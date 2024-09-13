@@ -5,7 +5,7 @@ using System;
 
 public enum DeckType
 {
-    Deck,
+    DrawPile,
     DiscardPile,
     Hand
 }
@@ -18,10 +18,10 @@ public class ShowCards : MonoBehaviour
 
     void Start()
     {
-        List<Card> cards = new List<Card>();
-        if (deckType == DeckType.Deck)
+        List<GameObject> cards = new List<GameObject>();
+        if (deckType == DeckType.DrawPile)
         {
-            cards = deckSystem.Deck;
+            cards = deckSystem.DrawPile;
         }
         if (deckType == DeckType.DiscardPile)
         {
@@ -34,9 +34,8 @@ public class ShowCards : MonoBehaviour
 
         for (int i = 0; i < cards.Count; i++)
         {
-            Debug.Log(cards[i].Name + ", position: " + (firstCardPosition + new Vector3((i % 7) * 20, (float) Math.Floor(i/7.0f) * 10, 0)));
-            // TODO: use when prefabs available
-            //Instantiate(cards[i], firstCardPosition + new Vector3((i % 7) * 20, (float) Math.Floor(i/7.0f) * 10, 0), Quaternion.identity);
+            Debug.Log(cards[i].name + ", position: " + (firstCardPosition + new Vector3((i % 7) * 20, (float) Math.Floor(i/7.0f) * 10, 0)));
+            Instantiate(cards[i], firstCardPosition + new Vector3((i % 7) * 100, (float) Math.Floor(i/7.0f) * 50, 0), Quaternion.identity, transform);
         }
         
     }

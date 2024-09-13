@@ -5,32 +5,15 @@ using Random = UnityEngine.Random;
 
 public class DeckSystem : MonoBehaviour
 {
-    
+    public List<GameObject> Deck;
     private const int MAX_HAND_SIZE = 5;
     private const int MIN_DECK_SIZE = 5;
     private const int MAX_DECK_SIZE = 10;
     
     
-    public List<Card> Deck = new()
-    {
-        Cards.Attack,
-        Cards.Attack,
-        Cards.Defense,
-        Cards.Defense,
-        Cards.Taunt,
-    }; 
-    public List<Card> DrawPile = new()
-    {
-        Cards.Taunt,
-        Cards.Taunt,
-        Cards.Taunt,
-        Cards.Taunt,
-    };
-    public List<Card> Hand = new()
-    {
-        Cards.Attack,        Cards.Attack,        Cards.Attack,        Cards.Attack,
-    };
-    public List<Card> DiscardPile = new(){Cards.Defense,Cards.Defense,Cards.Defense,};
+    public List<GameObject> DrawPile = new();
+    public List<GameObject> Hand = new();
+    public List<GameObject> DiscardPile = new();
     
     
     // Start is called before the first frame update
@@ -85,7 +68,7 @@ public class DeckSystem : MonoBehaviour
     {
         for (int i = 0; i < DrawPile.Count; i++)
         {
-            Card temp = Deck[i];
+            var temp = Deck[i];
             int randomIndex = Random.Range(i, DrawPile.Count);
             DrawPile[i] = Deck[randomIndex];
             DrawPile[randomIndex] = temp;
@@ -97,14 +80,14 @@ public class DeckSystem : MonoBehaviour
     {
         if (index >= 0 && index < Hand.Count)
         {
-            Card card = Hand[index];
+            var card = Hand[index];
             Hand.RemoveAt(index);
             DiscardPile.Add(card);
             applyCardEffect(card);
         }
     }
 
-    private void applyCardEffect(Card card)
+    private void applyCardEffect(GameObject card)
     {
         throw new System.NotImplementedException();
     }
