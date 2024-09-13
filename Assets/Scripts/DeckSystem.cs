@@ -19,9 +19,18 @@ public class DeckSystem : MonoBehaviour
         Cards.Defense,
         Cards.Taunt,
     }; 
-    public List<Card> DrawPile = new();
-    public List<Card> Hand = new();
-    public List<Card> DiscardPile = new();
+    public List<Card> DrawPile = new()
+    {
+        Cards.Taunt,
+        Cards.Taunt,
+        Cards.Taunt,
+        Cards.Taunt,
+    };
+    public List<Card> Hand = new()
+    {
+        Cards.Attack,        Cards.Attack,        Cards.Attack,        Cards.Attack,
+    };
+    public List<Card> DiscardPile = new(){Cards.Defense,Cards.Defense,Cards.Defense,};
     
     
     // Start is called before the first frame update
