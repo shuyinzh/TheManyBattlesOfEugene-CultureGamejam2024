@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DeckSystem : MonoBehaviour
 {
@@ -112,6 +114,5 @@ public class DeckSystem : MonoBehaviour
         DrawPile.AddRange(Deck);
         ShuffleDrawPile();
         DrawCards();
-        
     }
 }
