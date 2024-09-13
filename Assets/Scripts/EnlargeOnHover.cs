@@ -12,8 +12,8 @@ public class EnlargeOnHover : MonoBehaviour
     bool enlarging = false;
     bool shrinking = false;
 
-    float enlargeSpeed = 50f;
-    float shrinkSpeed = 70f;
+    float enlargeSpeed = 5f;
+    float shrinkSpeed = 7f;
 
     void Start()
     {
@@ -49,14 +49,12 @@ public class EnlargeOnHover : MonoBehaviour
 
     void OnMouseOver()
     {
-        transform.GetComponent<SpriteRenderer>().color = Color.red;
         shrinking = false;
         enlarging = true;
     }
 
     void OnMouseExit()
     {
-        transform.GetComponent<SpriteRenderer>().color = Color.white;
         enlarging = false;
         shrinking = true;
     }

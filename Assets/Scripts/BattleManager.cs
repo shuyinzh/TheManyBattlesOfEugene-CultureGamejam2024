@@ -36,10 +36,14 @@ public class BattleManager : MonoBehaviour
         state = BattleState.PlayerTurn;
 
         Hand = Player.deckSystem.Hand;
+        for (int i = 0; i < Hand.Count; i++)
+        {
+            GameObject o = Instantiate(Hand[i], new Vector3(-5+i*2.5f,-3f,0), Quaternion.identity, cardHand.transform);
+            o.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
+        }
         foreach (GameObject item in Hand)
         {
-            GameObject o = Instantiate(item, new Vector3(0,0,0), Quaternion.identity, cardHand.transform);
-            o.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
+
         }
         
         {        
