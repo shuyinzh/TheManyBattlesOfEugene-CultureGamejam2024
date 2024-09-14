@@ -170,7 +170,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Make Eugene and one target enemy switch intents.
+  m_text: Make Eugene and all enemies switch intents.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 6820921165627704899}
   - component: {fileID: -8150142199844489603}
   - component: {fileID: -8172563131251388927}
+  - component: {fileID: 3826899562341246643}
   m_Layer: 8
   m_Name: DieHeimsuchung
   m_TagString: Untagged
@@ -519,6 +520,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
+--- !u!114 &3826899562341246643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3967289286662263859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 711950d851c24a31a0f78a936f5f6d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 2
+  battleManager: {fileID: 0}
 --- !u!1 &4420325585156724313
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +560,7 @@ Transform:
   m_GameObject: {fileID: 4420325585156724313}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 1.92, z: 1}
+  m_LocalPosition: {x: -0.03, y: 1.83, z: 1}
   m_LocalScale: {x: 0.5361094, y: 0.51336294, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -592,7 +607,7 @@ SpriteRenderer:
   m_SortingLayerID: -156599553
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: bf11d5ab577a34175af2113d6f0c22a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1975d9c9d2f90ca419260dff7f0cbaee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

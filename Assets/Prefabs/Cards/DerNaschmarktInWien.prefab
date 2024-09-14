@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 5718972091491519340}
   - component: {fileID: -5983184458953216873}
   - component: {fileID: -7621390262680490048}
+  - component: {fileID: 5646713908762238007}
   m_Layer: 8
   m_Name: DerNaschmarktInWien
   m_TagString: Untagged
@@ -414,6 +415,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
+--- !u!114 &5646713908762238007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231247820201864888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9c6884bd2c4295b12afffd091ec872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 2
+  battleManager: {fileID: 0}
+  zeitgeistValue: 0
+  zeitgeistModifier: 2
+  ZeitgeistMaxValue: 0
 --- !u!1 &5243017138160644649
 GameObject:
   m_ObjectHideFlags: 0

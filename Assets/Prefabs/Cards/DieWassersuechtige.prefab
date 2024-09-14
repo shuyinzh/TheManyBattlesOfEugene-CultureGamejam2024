@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 6014709342200773961}
   - component: {fileID: -3872676726116812623}
   - component: {fileID: 6776949985693972714}
+  - component: {fileID: 6149686639802828048}
   m_Layer: 8
   m_Name: DieWassersuechtige
   m_TagString: Untagged
@@ -715,6 +716,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
+--- !u!114 &6149686639802828048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014677488947998327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9c6884bd2c4295b12afffd091ec872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 4
+  battleManager: {fileID: 0}
+  zeitgeistValue: 0
+  zeitgeistModifier: 0
+  ZeitgeistMaxValue: 4
 --- !u!1 &8957751672476446513
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +746,7 @@ GameObject:
   - component: {fileID: 2139503412967008440}
   - component: {fileID: 8944121614868537980}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: CardInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

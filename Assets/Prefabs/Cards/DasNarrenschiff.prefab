@@ -435,6 +435,99 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &4744457121343812494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3539809798957294844}
+  - component: {fileID: 2391094479942627724}
+  m_Layer: 0
+  m_Name: DrawCards
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3539809798957294844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4744457121343812494}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.044360757, y: -0.3102684, z: -0.15}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8003199187501378692}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2391094479942627724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4744457121343812494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb718179ceb4c11989ab0e2d613b814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 0
+  battleManager: {fileID: 0}
+  drawValue: 3
+--- !u!1 &4786785924524871386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2023036626382362442}
+  - component: {fileID: 5745153256342186872}
+  m_Layer: 8
+  m_Name: Discard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2023036626382362442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786785924524871386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8003199187501378692}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5745153256342186872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786785924524871386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27685c6ef2724b7f9ac9e6b08889135a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 0
+  battleManager: {fileID: 0}
 --- !u!1 &4823858832691775451
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +541,7 @@ GameObject:
   - component: {fileID: 2078323717179791870}
   - component: {fileID: 4079353043474665720}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: CardInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,6 +645,7 @@ GameObject:
   - component: {fileID: 5536526282661329991}
   - component: {fileID: 6791454070599471243}
   - component: {fileID: 7280481279819345259}
+  - component: {fileID: 4684559724025091092}
   m_Layer: 8
   m_Name: DasNarrenschiff
   m_TagString: Untagged
@@ -575,6 +669,8 @@ Transform:
   - {fileID: 5984868966098833151}
   - {fileID: 6795449890281434802}
   - {fileID: 1491679048744552000}
+  - {fileID: 2023036626382362442}
+  - {fileID: 3539809798957294844}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5536526282661329991
@@ -686,6 +782,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
+--- !u!114 &4684559724025091092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7284172791928210970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d28623b0cf46f698b6748e03126052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 1
+  battleManager: {fileID: 0}
+  cards:
+  - {fileID: 5745153256342186872}
+  - {fileID: 2391094479942627724}
 --- !u!1 &7837087805160837913
 GameObject:
   m_ObjectHideFlags: 0

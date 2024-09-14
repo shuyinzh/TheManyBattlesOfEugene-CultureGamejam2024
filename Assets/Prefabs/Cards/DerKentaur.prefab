@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 9188688547633551638}
   - component: {fileID: 6033837285113190454}
   - component: {fileID: 1318673330733975646}
+  - component: {fileID: 9047762455078137559}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -373,6 +374,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &9047762455078137559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4608661570708262404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f1a3e2f97c4030a3eb1d4348dee521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 0
+  battleManager: {fileID: 0}
+  attackValue: 1
+  newAttackModifier: 0
 --- !u!1 &5209020164300308216
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +620,7 @@ GameObject:
   - component: {fileID: 3160561030040641106}
   - component: {fileID: 3870968834964995512}
   - component: {fileID: 5618431885190378191}
+  - component: {fileID: 1614782369938278150}
   m_Layer: 8
   m_Name: DerKentaur
   m_TagString: Untagged
@@ -737,6 +755,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
+--- !u!114 &1614782369938278150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6780665972070881515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f1a3e2f97c4030a3eb1d4348dee521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 1
+  battleManager: {fileID: 0}
+  attackValue: 1
+  newAttackModifier: 0
 --- !u!1 &6856110439896100298
 GameObject:
   m_ObjectHideFlags: 0

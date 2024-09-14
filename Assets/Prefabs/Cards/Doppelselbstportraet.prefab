@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 6324062559986877436}
   - component: {fileID: 3389929198095119879}
   - component: {fileID: -8073107958963490665}
+  - component: {fileID: 7132287489217288295}
   m_Layer: 8
   m_Name: Doppelselbstportraet
   m_TagString: Untagged
@@ -468,6 +469,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
+--- !u!114 &7132287489217288295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381931537610566892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494832e45a724dba859e3d9d799a99de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 3
+  battleManager: {fileID: 0}
+  repeatValue: 1
 --- !u!1 &4673700115517815186
 GameObject:
   m_ObjectHideFlags: 0

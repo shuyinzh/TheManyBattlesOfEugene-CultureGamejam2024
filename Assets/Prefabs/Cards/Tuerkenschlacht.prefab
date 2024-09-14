@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 5191418732858821765}
   - component: {fileID: -3945039214631966045}
   - component: {fileID: -6380593758759496591}
+  - component: {fileID: 1981483264386182336}
   m_Layer: 8
   m_Name: Tuerkenschlacht
   m_TagString: Untagged
@@ -653,6 +654,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
+--- !u!114 &1981483264386182336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101686946101769759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97b7c96a3c14cedac73b0bf55591b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 1
+  battleManager: {fileID: 0}
+  Intent: 0
 --- !u!1 &7054036605361684108
 GameObject:
   m_ObjectHideFlags: 0
