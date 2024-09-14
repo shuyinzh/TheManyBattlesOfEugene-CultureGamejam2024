@@ -12,13 +12,20 @@ public class EnlargeOnHover : MonoBehaviour
     bool enlarging = false;
     bool shrinking = false;
 
+    bool isCardInHand = false;
+
     float enlargeSpeed = 5f;
     float shrinkSpeed = 7f;
+    float upSpeed = 20f;
 
     void Start()
     {
         originalScale = transform.localScale;
         enlargedScale = originalScale * 1.8f;
+        if (transform.parent.name == "CardHand")
+        {
+            isCardInHand = true;
+        }
     }
 
     void Update()
@@ -28,6 +35,10 @@ public class EnlargeOnHover : MonoBehaviour
             if (transform.localScale.x < enlargedScale.x)
             {
                transform.localScale += new Vector3(enlargeSpeed * Time.deltaTime, enlargeSpeed * Time.deltaTime, 0);
+               if (isCardInHand) 
+                {
+                    transform.position += new Vector3(0, upSpeed * Time.deltaTime, 0);
+                }
             }
             else 
             {
@@ -39,6 +50,10 @@ public class EnlargeOnHover : MonoBehaviour
             if (transform.localScale.x > originalScale.x)
             {
                 transform.localScale -= new Vector3(shrinkSpeed * Time.deltaTime, shrinkSpeed * Time.deltaTime, 0);
+                if (isCardInHand) 
+                {
+                    transform.position -= new Vector3(0, upSpeed * shrinkSpeed / enlargeSpeed * Time.deltaTime, 0);
+                }
             }
             else 
             {
