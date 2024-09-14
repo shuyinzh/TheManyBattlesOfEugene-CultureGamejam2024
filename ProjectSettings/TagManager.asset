@@ -50,3 +50,6 @@ TagManager:
   - name: Overlay
     uniqueID: 1645324879
     locked: 0
+  - name: SelectedCard
+    uniqueID: 681075367
+    locked: 0

@@ -9,6 +9,11 @@ public class EnlargeOnHover : MonoBehaviour
     Vector3 originalScale;
     Vector3 enlargedScale;
 
+    string originalSortingLayerName;
+    SpriteRenderer ownRenderer;
+    SpriteRenderer artworkRenderer;
+    Canvas canvasRenderer;
+
     bool enlarging = false;
     bool shrinking = false;
 
@@ -26,12 +31,17 @@ public class EnlargeOnHover : MonoBehaviour
         {
             isCardInHand = true;
         }
+        ownRenderer = GetComponent<SpriteRenderer>();
+        artworkRenderer = transform.FindChild("Artwork").GetComponent<SpriteRenderer>();
+        canvasRenderer = transform.FindChild("Canvas").GetComponent<Canvas>();
+        originalSortingLayerName = ownRenderer.sortingLayerName;
     }
 
     void Update()
     {
         if (enlarging)
         {
+            ElevateSortingLayer();
             if (transform.localScale.x < enlargedScale.x)
             {
                transform.localScale += new Vector3(enlargeSpeed * Time.deltaTime, enlargeSpeed * Time.deltaTime, 0);
@@ -65,12 +75,29 @@ public class EnlargeOnHover : MonoBehaviour
     void OnMouseOver()
     {
         shrinking = false;
-        enlarging = true;
+        enlarging = true;        
     }
 
     void OnMouseExit()
     {
         enlarging = false;
         shrinking = true;
+        ResetSortingLayer();
+    }
+
+
+    void ElevateSortingLayer()
+    {
+        ownRenderer.sortingLayerName = "SelectedCard";
+        artworkRenderer.sortingLayerName = "SelectedCard";
+        canvasRenderer.sortingLayerName = "SelectedCard";
+    }
+
+    void ResetSortingLayer()
+    {
+        ownRenderer.sortingLayerName = originalSortingLayerName;
+        artworkRenderer.sortingLayerName = originalSortingLayerName;
+        canvasRenderer.sortingLayerName = originalSortingLayerName;
+
     }
 }
