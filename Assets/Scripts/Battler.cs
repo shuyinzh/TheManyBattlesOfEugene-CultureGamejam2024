@@ -89,15 +89,16 @@ public abstract class Battler : MonoBehaviour
             return;
         }
 
-        if (UnityEngine.Random.Range(0, 10) >= 4)
+        if (UnityEngine.Random.Range(0, 10) >= 4.5)
         {
-            CurrentIntent = Intent.Defend;
-            currentIntent = "defend";
+            
+            CurrentIntent = Intent.Attack;
+            currentIntent = "attack";
         }
         else
         {
-            CurrentIntent = Intent.Attack;
-            currentIntent = "attack";
+            CurrentIntent = Intent.Defend;
+            currentIntent = "defend";
         }
         TauntGenerator.GenerateIntent(characterName, TauntGenerator.currentBattle.Battle1, currentIntent);
     }

@@ -1306,6 +1306,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &612852660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4458072281567504046, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+  m_PrefabInstance: {fileID: 4942999}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374313e441371461abe4706439ca22fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &620275025
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,6 +2119,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1872202389861125393, guid: 4852f13f998a24ba9b3c6efe1a2942f8, type: 3}
   m_PrefabInstance: {fileID: 371014179}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1361316421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7122985012581071055, guid: 4852f13f998a24ba9b3c6efe1a2942f8, type: 3}
+  m_PrefabInstance: {fileID: 371014179}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c760ed3f069e428292a9a5dfcb7b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1370562539 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3966711059448804642, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
@@ -2371,6 +2393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154c2d337d043969edfeaf1136e498f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: mum
   TauntGenerator: {fileID: 781708906}
   Health: {fileID: 1454479315}
   Name: Eugene's Mother
@@ -2398,6 +2421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 20
   currentHP: 20
+  healthBar: {fileID: 612852660}
 --- !u!95 &1454479316
 Animator:
   serializedVersion: 5
@@ -3088,6 +3112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 12
   currentHP: 12
+  healthBar: {fileID: 2127188002}
 --- !u!114 &1946843357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3100,7 +3125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154c2d337d043969edfeaf1136e498f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TauntGenerator: {fileID: 0}
+  characterName: eugene
+  TauntGenerator: {fileID: 1361316421}
   Health: {fileID: 1946843356}
   Name: BabyEugene
   AdditionalDefenseOnDefense: 1
@@ -3352,6 +3378,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2127188002 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4458072281567504046, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+  m_PrefabInstance: {fileID: 438574349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374313e441371461abe4706439ca22fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2144947602
 GameObject:
   m_ObjectHideFlags: 0

@@ -95,8 +95,20 @@ public class BattleManager : MonoBehaviour
 
     void SetNpcIntents()
     {
+        StartCoroutine(setEugeneIntent());
+    }
+
+    private IEnumerator setEugeneIntent()
+    {
         Eugene.CreateRandomIntent();
+        yield return new WaitForSeconds(7f);
+        yield return StartCoroutine(setEnemyIntent());
+    }
+
+    private IEnumerator setEnemyIntent()
+    {
         Enemy.CreateRandomIntent();
+        yield return null;
     }
 
     // Call on npc turn
