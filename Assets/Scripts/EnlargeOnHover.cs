@@ -13,6 +13,8 @@ public class EnlargeOnHover : MonoBehaviour
     SpriteRenderer ownRenderer;
     SpriteRenderer artworkRenderer;
     Canvas canvasRenderer;
+    SpriteRenderer glowRenderer1;
+    SpriteRenderer glowRenderer2;
 
     bool enlarging = false;
     bool shrinking = false;
@@ -34,6 +36,9 @@ public class EnlargeOnHover : MonoBehaviour
         ownRenderer = GetComponent<SpriteRenderer>();
         artworkRenderer = transform.Find("Artwork").GetComponent<SpriteRenderer>();
         canvasRenderer = transform.Find("Canvas").GetComponent<Canvas>();
+        GameObject glowObject = transform.Find("Glow").gameObject;
+        glowRenderer1 = glowObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        glowRenderer2 = glowObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
         originalSortingLayerName = ownRenderer.sortingLayerName;
     }
 
@@ -91,6 +96,8 @@ public class EnlargeOnHover : MonoBehaviour
         ownRenderer.sortingLayerName = "SelectedCard";
         artworkRenderer.sortingLayerName = "SelectedCard";
         canvasRenderer.sortingLayerName = "SelectedCard";
+        glowRenderer1.sortingLayerName = "SelectedCard";
+        glowRenderer2.sortingLayerName = "SelectedCard";
     }
 
     void ResetSortingLayer()
@@ -98,6 +105,7 @@ public class EnlargeOnHover : MonoBehaviour
         ownRenderer.sortingLayerName = originalSortingLayerName;
         artworkRenderer.sortingLayerName = originalSortingLayerName;
         canvasRenderer.sortingLayerName = originalSortingLayerName;
-
+        glowRenderer1.sortingLayerName = originalSortingLayerName;
+        glowRenderer2.sortingLayerName = originalSortingLayerName;
     }
 }
