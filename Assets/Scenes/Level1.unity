@@ -2394,6 +2394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154c2d337d043969edfeaf1136e498f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1454479312}
   characterName: mum
   TauntGenerator: {fileID: 781708906}
   Health: {fileID: 1454479315}
@@ -3126,6 +3127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154c2d337d043969edfeaf1136e498f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1946843353}
   characterName: eugene
   TauntGenerator: {fileID: 1361316421}
   Health: {fileID: 1946843356}

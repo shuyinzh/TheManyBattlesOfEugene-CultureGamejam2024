@@ -56,5 +56,28 @@ public class HealthBar : MonoBehaviour
                 idleIcon.SetActive(true);
                 break;
         }
+
+        StartCoroutine(makeIconsFlash());
+    }
+
+    private IEnumerator makeIconsFlash()
+    {
+        Color standardColour = new Color(164, 164, 164, 157);
+        Vector3 oldScaleIdle = idleIcon.transform.localScale;
+        Vector3 oldScaleAttack = attackIcon.transform.localScale;
+        Vector3 oldScaleDefense = defenseIcon.transform.localScale;
+        idleIcon.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        idleIcon.GetComponent<SpriteRenderer>().color = Color.white;
+        attackIcon.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        attackIcon.GetComponent<SpriteRenderer>().color = Color.red;
+        defenseIcon.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        defenseIcon.GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(0.3f);
+        idleIcon.transform.localScale = oldScaleIdle;
+        idleIcon.GetComponent<SpriteRenderer>().color = standardColour;
+        attackIcon.transform.localScale = oldScaleAttack;
+        attackIcon.GetComponent<SpriteRenderer>().color = standardColour;
+        defenseIcon.transform.localScale = oldScaleDefense;
+        defenseIcon.GetComponent<SpriteRenderer>().color = standardColour;
     }
 }
