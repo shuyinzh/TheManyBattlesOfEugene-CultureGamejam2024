@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1454479313}
     m_Modifications:
+    - target: {fileID: 686914848835570369, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3264290637814823321, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
       propertyPath: m_Name
       value: NpcInfo
@@ -190,6 +194,14 @@ PrefabInstance:
       propertyPath: battler
       value: 
       objectReference: {fileID: 1454479314}
+    - target: {fileID: 4564571342456404062, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564571342456404062, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.03
+      objectReference: {fileID: 0}
     - target: {fileID: 5535780395619973560, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
       propertyPath: npc
       value: 
@@ -197,7 +209,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3966711059448804642, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1370562543}
+    - targetCorrespondingSourceObject: {fileID: 5643951047566370545, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 417352614}
   m_SourcePrefab: {fileID: 100100000, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
 --- !u!4 &4943000 stripped
 Transform:
@@ -317,7 +335,7 @@ RectTransform:
   m_GameObject: {fileID: 151420366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1936799762}
@@ -397,14 +415,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6895529, b: 0.47450984, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 741e8ed11b7934324bbe6e7ef51c624c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -576,8 +594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -37, y: -40.7}
+  m_SizeDelta: {x: -89.47, y: -89.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &350410124
 MonoBehaviour:
@@ -601,15 +619,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -691,6 +709,34 @@ MonoBehaviour:
   DeckSystem: {fileID: 577466653}
   buttonText: {fileID: 350410124}
   DeckTextType: 0
+--- !u!1 &417352610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5643951047566370545, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+  m_PrefabInstance: {fileID: 4942999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &417352614
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417352610}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 1645324879
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1001 &438574349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -759,6 +805,10 @@ PrefabInstance:
       propertyPath: battler
       value: 
       objectReference: {fileID: 1946843357}
+    - target: {fileID: 4564571342456404062, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.03
+      objectReference: {fileID: 0}
     - target: {fileID: 5535780395619973560, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
       propertyPath: npc
       value: 
@@ -1314,7 +1364,7 @@ RectTransform:
   m_GameObject: {fileID: 1237557689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 350410123}
@@ -1394,14 +1444,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4764151, g: 0.71834934, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 0d4e9a4f6e3e449da9169bcc4ba32233, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1586,6 +1636,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1370562539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3966711059448804642, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+  m_PrefabInstance: {fileID: 4942999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1370562543
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370562539}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 1645324879
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1427634518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,13 +1899,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 1454479315}
   Name: Eugene's Mother
+  AdditionalDefenseOnDefense: 1
   Defense: 0
   BaseAttack: 1
   AdditionalAttack: 0
   AttackModifier: 1
   CurrentIntent: 0
   charmed: 0
-  RepeatLastAction: 0
+  RepeatAction: 0
   sleep: 0
 --- !u!114 &1454479315
 MonoBehaviour:
@@ -2194,8 +2273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -41.44, y: -41.44}
+  m_SizeDelta: {x: -82.88, y: -82.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936799763
 MonoBehaviour:
@@ -2219,15 +2298,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2410,13 +2489,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 1946843356}
   Name: BabyEugene
+  AdditionalDefenseOnDefense: 1
   Defense: 0
   BaseAttack: 1
   AdditionalAttack: 0
   AttackModifier: 1
   CurrentIntent: 0
   charmed: 0
-  RepeatLastAction: 0
+  RepeatAction: 0
   sleep: 0
 --- !u!95 &1946843358
 Animator:

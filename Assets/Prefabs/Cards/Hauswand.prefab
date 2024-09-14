@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hauswand
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -201,8 +201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SCHIELE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -440,8 +440,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -671,7 +671,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 57df8afe8adc44b21a4063d990a90963, type: 3}
-  m_Color: {r: 0.6460175, g: 1, b: 0.49411762, a: 1}
+  m_Color: {r: 0.40784314, g: 0.62352943, b: 0.31764707, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -903,8 +903,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Add one (1) shield point to Eugene's shield.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
