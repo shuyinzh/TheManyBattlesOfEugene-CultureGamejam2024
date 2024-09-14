@@ -99,9 +99,12 @@ public class BattleManager : MonoBehaviour
     }
 
     // Call on npc turn
-    void onNpcTurn()
+    public void onNpcTurn()
     {
-        
+        // discard player hand
+        deckSystem.DiscardHand();
+        UpdateHand();
+
         if (Eugene.CurrentIntent == Intent.Defend)
         {
             Eugene.Defense += Eugene.AdditionalDefenseOnDefense;
@@ -132,9 +135,8 @@ public class BattleManager : MonoBehaviour
                 enemyAnimator.SetTrigger(ATTACK);
             }
         }
-
-        
     }
+    
     private void UpdateHand()
     {
         ClearHand();
