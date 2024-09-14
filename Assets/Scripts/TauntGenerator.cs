@@ -17,8 +17,7 @@ public class TauntGenerator : MonoBehaviour
 
     private string apiUrl = "https://api.openai.com/v1/chat/completions";
     private string TTSapiUrl = "https://api.openai.com/v1/audio/speech";
-
-    public enum characterTalking
+    public enum CharacterTalking
     {
         Eugene,
         Mum,
@@ -26,7 +25,7 @@ public class TauntGenerator : MonoBehaviour
         God
     }
 
-    public enum intentType
+    public enum IntentType
     {
         Attack,
         Defense
@@ -60,18 +59,18 @@ public class TauntGenerator : MonoBehaviour
             "echo"));
     }
 
-    public void GenerateIntent(characterTalking cT, currentBattle cB, intentType iT)
+    public void GenerateIntent(CharacterTalking cT, currentBattle cB, IntentType iT)
     {
         bool requestCorrect = true;
         string attackDefend = "";
         string addedCharacterInfo = "";
         string voiceModel = "echo";
 
-        if (iT == intentType.Attack)
+        if (iT == IntentType.Attack)
         {
             attackDefend = "attack";
         }
-        else if (iT == intentType.Defense)
+        else if (iT == IntentType.Defense)
         {
             attackDefend = "block an attack by another character";
         }
@@ -83,19 +82,19 @@ public class TauntGenerator : MonoBehaviour
 
         switch (cT)
         {
-            case characterTalking.Eugene:
+            case CharacterTalking.Eugene:
                 addedCharacterInfo = "Eugene von Savoyen";
                 voiceModel = "echo";
                 break;
-            case characterTalking.Mum:
+            case CharacterTalking.Mum:
                 addedCharacterInfo = "Eugene von Savoyen's mother who is rumoured to poison royals";
                 voiceModel = "nova";
                 break;
-            case characterTalking.Granny:
+            case CharacterTalking.Granny:
                 addedCharacterInfo = "Eugene von Savoyen's granny who wants Eugene to become a priest";
                 voiceModel = "alloy";
                 break;
-            case characterTalking.God:
+            case CharacterTalking.God:
                 addedCharacterInfo = "God, who, like Eugene von Savoyen's granny, wants Eugene to become a priest";
                 voiceModel = "onyx";
                 break;
@@ -224,6 +223,6 @@ public class TauntGenerator : MonoBehaviour
 
     private void Start()
     {
-        GenerateIntent(characterTalking.Mum, currentBattle.Battle1, intentType.Defense);
+        GenerateIntent(CharacterTalking.Mum, currentBattle.Battle1, IntentType.Defense);
     }
 }

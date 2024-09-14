@@ -12,6 +12,7 @@ public enum Intent
 
 public abstract class Battler : MonoBehaviour
 {
+    public TauntGenerator TauntGenerator;
     public Health Health;
     public string Name;
 
@@ -29,6 +30,10 @@ public abstract class Battler : MonoBehaviour
     public int RepeatAction = 0;
 
     public int sleep;
+
+    public int taunted;
+    
+    public bool isTaunted => taunted > 0;
 
     public void Start()
     {
@@ -60,7 +65,10 @@ public abstract class Battler : MonoBehaviour
         {
             charmed--;
         }
-
+        if(taunted > 0)
+        {
+            taunted = 0;
+        }
         RepeatAction = 0;
     }
 
