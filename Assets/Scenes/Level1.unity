@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NpcInfo
       objectReference: {fileID: 0}
+    - target: {fileID: 4220794891282010579, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: m_margin.y
+      value: 1.4626973
+      objectReference: {fileID: 0}
     - target: {fileID: 4342750843173594290, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.46303532
@@ -983,6 +987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NpcInfo
       objectReference: {fileID: 0}
+    - target: {fileID: 4220794891282010579, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: m_margin.y
+      value: 1.3134948
+      objectReference: {fileID: 0}
     - target: {fileID: 4342750843173594290, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4886878
@@ -1693,7 +1701,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1645324879
   m_SortingOrder: 0
@@ -3322,7 +3330,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1645324879
   m_SortingOrder: 0
