@@ -55,11 +55,11 @@ public class TauntGenerator : MonoBehaviour
     };
 
     // Function to send a prompt and receive the response
-    public void GenerateTaunt(currentBattle eI)
+    public void GenerateTaunt()
     {
         StartCoroutine(SendOpenAIRequest(
             "I need a one liner taunt or joke from the perspective of Eugene von Savoyen, please make it up to 10 words long and don't add anything but the joke/taunt, no parenthesis, no formatting, no apostrophes, just the quote, as an added context of who to taunt and of the situation Eugene is in, use this: " +
-            extraInfo[eI] +
+            "This is Eugen's childhood, Eugene is battling his mother who always neglected him and is rumoured to be behind a streak of poisonings of royals" +
             " Like I said, only the taunt/joke, this is very important and up to 10 words and end with three exclamation marks!",
             "echo"));
     }

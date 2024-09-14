@@ -54,20 +54,20 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         Player.StartMatch();
-        
+
         Eugene.StartMatch();
         Enemy.StartMatch();
 
         onPlayerRound();
-        
-        {        
+
+        {
             // player turn
-                // draw cards
-                // player action: select, 
-                // play card, apply effect
-                // end turn -> discard hand?
-                // when attack -> eugeneAnimator.SetTrigger(ATTACK)
-                // when enemy defense -> enemyAnitmaor.SetTrigger(DEFENSE)
+            // draw cards
+            // player action: select, 
+            // play card, apply effect
+            // end turn -> discard hand?
+            // when attack -> eugeneAnimator.SetTrigger(ATTACK)
+            // when enemy defense -> enemyAnitmaor.SetTrigger(DEFENSE)
 
 
             // eugene action
@@ -75,11 +75,12 @@ public class BattleManager : MonoBehaviour
             // enemy action, apply effects
         }
     }
+
     // Call on player turn
     void onPlayerRound()
     {
         Player.StartRound();
-        
+
         UpdateHand();
 
         NpcApplyEffects();
@@ -88,7 +89,7 @@ public class BattleManager : MonoBehaviour
     void NpcApplyEffects()
     {
         SetNpcIntents();
-        
+
         Eugene.StartRound();
         Enemy.StartRound();
     }
@@ -119,11 +120,11 @@ public class BattleManager : MonoBehaviour
         UpdateHand();
 
         setupNpcTurn();
-        
+
         StartCoroutine(EugeneTurn());
     }
 
-    
+
     private IEnumerator EugeneTurn()
     {
         if (Eugene.CurrentIntent == Intent.Attack)
@@ -139,7 +140,8 @@ public class BattleManager : MonoBehaviour
                 yield return new WaitForSeconds(2f);
                 Eugene.Attack(Enemy);
             }
-        } else if (Eugene.CurrentIntent == Intent.Defend)
+        }
+        else if (Eugene.CurrentIntent == Intent.Defend)
         {
             for (int i = 0; i < Eugene.RepeatAction; i++)
             {
@@ -147,6 +149,7 @@ public class BattleManager : MonoBehaviour
                 yield return new WaitForSeconds(2f);
             }
         }
+
         yield return StartCoroutine(EnemyTurn());
     }
 
@@ -160,7 +163,8 @@ public class BattleManager : MonoBehaviour
                 yield return new WaitForSeconds(1f);
                 Enemy.Attack(Eugene);
             }
-        } else if (Enemy.CurrentIntent == Intent.Defend)
+        }
+        else if (Enemy.CurrentIntent == Intent.Defend)
         {
             for (int i = 0; i < Enemy.RepeatAction; i++)
             {
@@ -172,7 +176,7 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         onPlayerRound();
     }
-    
+
     private void setupNpcTurn()
     {
         if (Eugene.CurrentIntent == Intent.Defend)
@@ -188,7 +192,7 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    
+
     private void UpdateHand()
     {
         ClearHand();
@@ -219,9 +223,8 @@ public class BattleManager : MonoBehaviour
     public void playDefenseCard(int defense)
     {
         Eugene.Defense += defense;
-        
     }
-    
+
     public void playAttackCard(int attack)
     {
         Eugene.AdditionalAttack += attack;
@@ -257,7 +260,6 @@ public class BattleManager : MonoBehaviour
     {
         Eugene.SwitchIntent();
         Enemy.SwitchIntent();
-        
     }
 
     public void playZeitgeistMaxCard(int zeitgeistMaxValue)
@@ -267,7 +269,6 @@ public class BattleManager : MonoBehaviour
 
     public void playRepeatActionCard(int repeatValue)
     {
-        
         Eugene.RepeatAction = repeatValue;
     }
 
@@ -288,6 +289,7 @@ public class BattleManager : MonoBehaviour
 
     public void playTauntCard(int tauntValue)
     {
+        Eugene.TauntGenerator.GenerateTaunt();
         Enemy.taunted += tauntValue;
         Enemy.SwitchIntent(Intent.Attack);
     }
