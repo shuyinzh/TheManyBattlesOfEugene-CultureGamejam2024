@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json.Linq;
@@ -150,8 +151,12 @@ public class TauntGenerator : MonoBehaviour
             // Parse and use the response
             string jsonResponse = request.downloadHandler.text;
             JObject responseObj = JObject.Parse(jsonResponse);
-
+        
             generatedText = responseObj["choices"][0]["message"]["content"].ToString();
+            string pattern = @"[^a-zA-Z0-9,.!?'\s]";
+        
+            // Replace unwanted characters with an empty string
+            generatedText = Regex.Replace(generatedText, pattern, "");
             Debug.Log("Generated Text: " + generatedText);
             GenerateSpeech(generatedText, voiceModel);
         }

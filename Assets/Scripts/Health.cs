@@ -23,6 +23,11 @@ public class Health: MonoBehaviour
         healthBar.updateHealth();
     }
 
+    public void UpdateIntent()
+    {
+        healthBar.updateIntent();
+    }
+
     public void Die()
     {
         currentHP = 0;

@@ -82,6 +82,7 @@ public class BattleManager : MonoBehaviour
     {
         Eugene.CreateRandomIntent();
         yield return new WaitForSeconds(7f);
+        Eugene.Health.UpdateIntent();
         yield return StartCoroutine(setEnemyIntent());
     }
 
@@ -89,7 +90,7 @@ public class BattleManager : MonoBehaviour
     {
         Enemy.CreateRandomIntent();
         yield return new WaitForSeconds(8f);
-
+        Enemy.Health.UpdateIntent();
         Player.StartRound();
         UpdateHand();
 
