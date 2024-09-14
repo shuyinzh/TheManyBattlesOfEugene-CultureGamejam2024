@@ -5,12 +5,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json.Linq;
+using TMPro;
 
 public class TauntGenerator : MonoBehaviour
 {
     private string voice = "echo"; // Voice selection, modify as necessary
     private string model = "tts-1";
     public AudioSource audioSource;
+
+    public GameObject speechBubble;
+    public TMP_Text speechBubbleText;
 
     private string apiKey =
         "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";
@@ -154,9 +158,19 @@ public class TauntGenerator : MonoBehaviour
             JObject responseObj = JObject.Parse(jsonResponse);
 
             string generatedText = responseObj["choices"][0]["message"]["content"].ToString();
+            speechBubble.SetActive(true);
+            speechBubbleText.text = generatedText;
+            StartCoroutine(removeSpeechBubble());
             Debug.Log("Generated Text: " + generatedText);
             GenerateSpeech(generatedText, voiceModel);
         }
+    }
+
+    private IEnumerator removeSpeechBubble()
+    {
+        yield return new WaitForSeconds(3f);
+        speechBubbleText.text = "";
+        speechBubble.SetActive(false);
     }
 
     // Function to generate speech and play it
@@ -223,6 +237,6 @@ public class TauntGenerator : MonoBehaviour
 
     private void Start()
     {
-        GenerateIntent(CharacterTalking.Mum, currentBattle.Battle1, IntentType.Defense);
+        speechBubble.SetActive(false);
     }
 }
