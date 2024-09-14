@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 7666801296186654741}
   - component: {fileID: 7654085855010073124}
   - component: {fileID: 1046944950138917384}
-  - component: {fileID: 3480098935901794604}
+  - component: {fileID: 1291770659350477580}
   m_Layer: 8
   m_Name: PrinzEugen
   m_TagString: Untagged
@@ -459,7 +459,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
---- !u!114 &3480098935901794604
+--- !u!114 &1291770659350477580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -468,12 +468,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3913218541836817019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a656f62e1e444f30bdc33cc1962e20c, type: 3}
+  m_Script: {fileID: 11500000, guid: ada55fa9baa342aa98846ee1afcfaceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Cost: 1
   battleManager: {fileID: 0}
-  drawValue: 3
+  tauntValue: 1
 --- !u!1 &6744223522236940549
 GameObject:
   m_ObjectHideFlags: 0
