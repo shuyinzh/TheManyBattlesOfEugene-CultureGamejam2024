@@ -32,7 +32,7 @@ public class BattleManager : MonoBehaviour
         Hand = Player.deckSystem.Hand;
         for (int i = 0; i < Hand.Count; i++)
         {
-            GameObject o = Instantiate(Hand[i], new Vector3(-5+i*2.5f,-3f,0), Quaternion.identity, cardHand.transform);
+            GameObject o = Instantiate(Hand[i], new Vector3(-5 + i * 2.25f, -3f, 0), Quaternion.identity, cardHand.transform);
             o.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
         }
         foreach (GameObject item in Hand)
