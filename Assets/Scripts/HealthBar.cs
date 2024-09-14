@@ -44,6 +44,11 @@ public class HealthBar : MonoBehaviour
                 idleIcon.SetActive(true);
                 break;
         }
+        updateHealth();
+    }
+
+    public void updateHealth()
+    {
         currentHealth = battler.Health.currentHP;
         healthBar.transform.localScale = new Vector3(maxSize * currentHealth / maxHealth,
             healthBar.transform.localScale.y, healthBar.transform.localScale.z);

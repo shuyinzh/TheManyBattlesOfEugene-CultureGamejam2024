@@ -63,18 +63,18 @@ public class TauntGenerator : MonoBehaviour
             "echo"));
     }
 
-    public void GenerateIntent(CharacterTalking cT, currentBattle cB, IntentType iT)
+    public void GenerateIntent(string cT, currentBattle cB, string iT)
     {
         bool requestCorrect = true;
         string attackDefend = "";
         string addedCharacterInfo = "";
         string voiceModel = "echo";
 
-        if (iT == IntentType.Attack)
+        if (iT.Equals("attack"))
         {
             attackDefend = "attack";
         }
-        else if (iT == IntentType.Defense)
+        else if (iT.Equals("defend"))
         {
             attackDefend = "block an attack by another character";
         }
@@ -86,21 +86,13 @@ public class TauntGenerator : MonoBehaviour
 
         switch (cT)
         {
-            case CharacterTalking.Eugene:
+            case "eugene":
                 addedCharacterInfo = "Eugene von Savoyen";
                 voiceModel = "echo";
                 break;
-            case CharacterTalking.Mum:
+            case "mum":
                 addedCharacterInfo = "Eugene von Savoyen's mother who is rumoured to poison royals";
                 voiceModel = "nova";
-                break;
-            case CharacterTalking.Granny:
-                addedCharacterInfo = "Eugene von Savoyen's granny who wants Eugene to become a priest";
-                voiceModel = "alloy";
-                break;
-            case CharacterTalking.God:
-                addedCharacterInfo = "God, who, like Eugene von Savoyen's granny, wants Eugene to become a priest";
-                voiceModel = "onyx";
                 break;
         }
 

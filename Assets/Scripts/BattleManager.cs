@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -106,7 +107,13 @@ public class BattleManager : MonoBehaviour
         UpdateHand();
 
         setupNpcTurn();
+        
+        StartCoroutine(EugeneTurn());
+    }
 
+    
+    private IEnumerator EugeneTurn()
+    {
         if (Eugene.CurrentIntent == Intent.Attack)
         {
             for (int i = 0; i < Eugene.RepeatAction; i++)
@@ -116,32 +123,44 @@ public class BattleManager : MonoBehaviour
                     Eugene.AttackModifier = 0; // Remove this if it's not the mother
                 }
 
-                Eugene.Attack(Enemy);
                 eugeneAnimator.SetTrigger(ATTACK);
-                if (Enemy.CurrentIntent == Intent.Defend)
-                {
-                    
-                    enemyAnimator.SetTrigger(DEFENSE);
-                }
+                yield return new WaitForSeconds(2f);
+                Eugene.Attack(Enemy);
+            }
+        } else if (Eugene.CurrentIntent == Intent.Defend)
+        {
+            for (int i = 0; i < Eugene.RepeatAction; i++)
+            {
+                eugeneAnimator.SetTrigger(DEFENSE);
+                yield return new WaitForSeconds(2f);
             }
         }
+        yield return StartCoroutine(EnemyTurn());
+    }
 
+    private IEnumerator EnemyTurn()
+    {
         if (Enemy.CurrentIntent == Intent.Attack)
         {
             for (int i = 0; i < Enemy.RepeatAction; i++)
             {
-                if(Eugene.CurrentIntent == Intent.Defend)
-                {
-                    eugeneAnimator.SetTrigger(DEFENSE);
-                }
-                Enemy.Attack(Eugene);
                 enemyAnimator.SetTrigger(ATTACK);
+                yield return new WaitForSeconds(1f);
+                Enemy.Attack(Eugene);
+            }
+        } else if (Enemy.CurrentIntent == Intent.Defend)
+        {
+            for (int i = 0; i < Enemy.RepeatAction; i++)
+            {
+                enemyAnimator.SetTrigger(DEFENSE);
+                yield return new WaitForSeconds(2f);
             }
         }
-        // Wait for animation to finish
-        Invoke("onPlayerRound", 2);
-    }
 
+        yield return new WaitForSeconds(1f);
+        onPlayerRound();
+    }
+    
     private void setupNpcTurn()
     {
         if (Eugene.CurrentIntent == Intent.Defend)

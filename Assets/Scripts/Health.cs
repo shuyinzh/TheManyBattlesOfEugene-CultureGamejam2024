@@ -4,6 +4,7 @@ public class Health: MonoBehaviour
 {
     public int maxHP = 10;
     public int currentHP;
+    public HealthBar healthBar;
 
     public bool IsAlive => currentHP > 0;
     public void Start()
@@ -19,6 +20,7 @@ public class Health: MonoBehaviour
     public void Heal(int amount)
     {
         currentHP = Mathf.Clamp(currentHP + amount, 0, maxHP);
+        healthBar.updateHealth();
     }
 
     public void Die()

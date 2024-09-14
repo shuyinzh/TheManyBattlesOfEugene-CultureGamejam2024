@@ -12,6 +12,7 @@ public enum Intent
 
 public abstract class Battler : MonoBehaviour
 {
+    public String characterName;
     public TauntGenerator TauntGenerator;
     public Health Health;
     public string Name;
@@ -27,7 +28,7 @@ public abstract class Battler : MonoBehaviour
 
     //Indicates how many turns the battler is charmed for
     public int charmed = 0;
-    public int RepeatAction = 0;
+    public int RepeatAction = 1;
 
     public int sleep;
 
@@ -47,7 +48,6 @@ public abstract class Battler : MonoBehaviour
 
     public void StartRound()
     {
-        CreateRandomIntent();
         AdditionalAttack = 0;
         Defense = 0;
         AttackModifier = 1.0;
@@ -69,7 +69,7 @@ public abstract class Battler : MonoBehaviour
         {
             taunted = 0;
         }
-        RepeatAction = 0;
+        RepeatAction = 1;
     }
 
     public void Update()
@@ -82,20 +82,24 @@ public abstract class Battler : MonoBehaviour
 
     public void CreateRandomIntent()
     {
+        string currentIntent = "";
         if (sleep > 0)
         {
             CurrentIntent = Intent.Idle;
             return;
         }
 
-        if (UnityEngine.Random.Range(0, 2) == 0)
+        if (UnityEngine.Random.Range(0, 10) >= 4)
         {
-            CurrentIntent = Intent.Attack;
+            CurrentIntent = Intent.Defend;
+            currentIntent = "defend";
         }
         else
         {
-            CurrentIntent = Intent.Defend;
+            CurrentIntent = Intent.Attack;
+            currentIntent = "attack";
         }
+        TauntGenerator.GenerateIntent(characterName, TauntGenerator.currentBattle.Battle1, currentIntent);
     }
 
     public void SwitchIntent()
