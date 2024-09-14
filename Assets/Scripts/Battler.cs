@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -12,6 +13,7 @@ public enum Intent
 
 public abstract class Battler : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
     public String characterName;
     public TauntGenerator TauntGenerator;
     public Health Health;
@@ -139,10 +141,21 @@ public abstract class Battler : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health.TakeDamage(damage);
+        if (damage > 0)
+        {
+            StartCoroutine(damageIndication());
+        }
     }
 
     public int CalculateDamage()
     {
         return (int)Math.Ceiling((BaseAttack + AdditionalAttack) * AttackModifier);
+    }
+
+    private IEnumerator damageIndication()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+        spriteRenderer.color = Color.white;
     }
 }
