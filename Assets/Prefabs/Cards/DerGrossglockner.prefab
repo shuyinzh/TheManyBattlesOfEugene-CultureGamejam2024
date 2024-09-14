@@ -172,8 +172,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -402,7 +402,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 57df8afe8adc44b21a4063d990a90963, type: 3}
-  m_Color: {r: 0.64705884, g: 1, b: 0.495283, a: 1}
+  m_Color: {r: 0.4074901, g: 0.6226415, b: 0.31425774, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -551,8 +551,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ENDER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -685,8 +685,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Eugene gains one (1) shield point for every attack point he currently has.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -819,8 +819,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Der Gro\xDFglockner mit der Pasterze"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
