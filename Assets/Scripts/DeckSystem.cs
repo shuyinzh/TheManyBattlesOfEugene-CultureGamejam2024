@@ -15,19 +15,7 @@ public class DeckSystem : MonoBehaviour
     public List<GameObject> DrawPile = new();
     public List<GameObject> Hand = new();
     public List<GameObject> DiscardPile = new();
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public void DrawCards(int numCards = MAX_HAND_SIZE)
     {
@@ -86,13 +74,7 @@ public class DeckSystem : MonoBehaviour
             var card = Hand[index];
             Hand.RemoveAt(index);
             DiscardPile.Add(card);
-            applyCardEffect(card);
         }
-    }
-
-    private void applyCardEffect(GameObject card)
-    {
-        throw new System.NotImplementedException();
     }
     
     public void DiscardHand()

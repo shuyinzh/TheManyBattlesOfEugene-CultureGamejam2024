@@ -1,4 +1,7 @@
-﻿public class RepeatActionCard : BaseCard
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+public class RepeatActionCard : BaseCard
 {
     public int repeatValue;
     

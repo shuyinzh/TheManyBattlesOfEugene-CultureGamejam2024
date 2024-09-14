@@ -18,6 +18,7 @@ public class BattleManager : MonoBehaviour
     public NPC Eugene;
     public NPC Enemy;
     public GameObject cardHand;
+    public DeckSystem deckSystem;
 
     private const string ATTACK = "attack";
     private const string DEFENSE = "defense";
@@ -25,8 +26,36 @@ public class BattleManager : MonoBehaviour
     public Animator enemyAnimator;
 
     public List<GameObject> Hand = new List<GameObject>();
+    public List<GameObject> HandCardObjects = new List<GameObject>();
 
     private BattleState state = BattleState.Initial;
+
+    private void OnEnable()
+    {
+        HandCardInteractable.OnCardPlayed += PlayCard;
+    }
+
+    private void OnDisable()
+    {
+        HandCardInteractable.OnCardPlayed -= PlayCard;
+    }
+
+    void PlayCard(GameObject playedCard)
+    {
+        Debug.Log("played card: " + playedCard);
+
+        for (int i = 0; i < Hand.Count; i++)
+        {
+            if (HandCardObjects[i] == playedCard)
+            {
+                deckSystem.PlayHandCard(i);
+            }
+        }
+        playedCard.GetComponent<BaseCard>().whenPlayed();
+
+        // update hand
+        UpdateHand();
+    }
 
     void Start()
     {
@@ -34,14 +63,7 @@ public class BattleManager : MonoBehaviour
 
         state = BattleState.PlayerTurn;
 
-        Hand = Player.deckSystem.Hand;
-        for (int i = 0; i < Hand.Count; i++)
-        {
-            GameObject handCard = Instantiate(Hand[i], new Vector3(-5+i*2.5f,-3f,0), Quaternion.identity, cardHand.transform);
-            handCard.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
-            
-            
-        }
+        UpdateHand();
         
         Eugene.StartMatch();
         Enemy.StartMatch();
@@ -56,6 +78,7 @@ public class BattleManager : MonoBehaviour
                 // when attack -> eugeneAnimator.SetTrigger(ATTACK)
                 // when enemy defense -> enemyAnitmaor.SetTrigger(DEFENSE)
 
+
             // eugene action
 
             // enemy action, apply effects
@@ -65,6 +88,20 @@ public class BattleManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void UpdateHand()
+    {
+        Hand = deckSystem.Hand;
+        for (int i = 0; i < Hand.Count; i++)
+        {
+            GameObject handCard = Instantiate(Hand[i], new Vector3(-5+i*2.5f,-3f,0), Quaternion.identity, cardHand.transform);
+            handCard.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
+            handCard.AddComponent<HandCardInteractable>();
+            var card = handCard.GetComponent<BaseCard>();
+            card.battleManager = this;
+            HandCardObjects.Add(handCard);
+        }
     }
 
     public void playDefenseCard(int defense)
@@ -85,7 +122,7 @@ public class BattleManager : MonoBehaviour
 
     public void playDiscardCard()
     {
-        Player.deckSystem.DiscardHand();
+        deckSystem.DiscardHand();
     }
 
     public void playCharmeCard(int charmValue)
@@ -122,7 +159,7 @@ public class BattleManager : MonoBehaviour
 
     public void playDrawCard(int drawValue)
     {
-        Player.deckSystem.DrawCards(drawValue);
+        deckSystem.DrawCards(drawValue);
     }
 
     public void playEuegeneIntentSwitcherCard(Intent intent)

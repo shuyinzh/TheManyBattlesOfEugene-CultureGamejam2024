@@ -1,4 +1,7 @@
-﻿public class AttackCard : BaseCard{
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+public class AttackCard : BaseCard{
     public int attackValue = 0;
     public int newAttackModifier;
     public override void whenPlayed()

@@ -1116,9 +1116,11 @@ MonoBehaviour:
   Eugene: {fileID: 1946843357}
   Enemy: {fileID: 1454479314}
   cardHand: {fileID: 1182179991}
+  deckSystem: {fileID: 577466653}
   eugeneAnimator: {fileID: 0}
   enemyAnimator: {fileID: 0}
   Hand: []
+  HandCardObjects: []
 --- !u!1 &1237557689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,6 +1743,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 1454479315}
   Name: Eugene's Mother
+  Defense: 0
+  BaseAttack: 1
+  AdditionalAttack: 0
+  AttackModifier: 1
+  CurrentIntent: 0
+  charmed: 0
+  RepeatLastAction: 0
+  sleep: 0
 --- !u!114 &1454479315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1825,6 +1835,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckSystem: {fileID: 577466653}
+  BaseZeitgeist: 3
+  AdditionalZeitgeist: 0
+  Zeitgeist: 0
+  ZeitgeistModifier: 1
 --- !u!1001 &1699670808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2408,6 +2422,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 1946843356}
   Name: BabyEugene
+  Defense: 0
+  BaseAttack: 1
+  AdditionalAttack: 0
+  AttackModifier: 1
+  CurrentIntent: 0
+  charmed: 0
+  RepeatLastAction: 0
+  sleep: 0
 --- !u!95 &1946843358
 Animator:
   serializedVersion: 5

@@ -1,4 +1,7 @@
-﻿public class EugeneIntentSwitcherCard : BaseCard
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+public class EugeneIntentSwitcherCard : BaseCard
 {
     public Intent Intent;
     public override void whenPlayed()
