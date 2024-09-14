@@ -3,6 +3,6 @@
     public Intent Intent;
     public override void whenPlayed()
     {
-        battleManager.playEuegeneIntentSwitcherCard(Intent);
+        battleManager.playEugeneIntentSwitcherCard(Intent);
     }
 }

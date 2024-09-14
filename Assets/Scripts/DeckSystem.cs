@@ -56,7 +56,14 @@ public class DeckSystem : MonoBehaviour
         else
         {
             ShuffleDiscardPileIntoDeck();
-            DrawCards();
+            if(DrawPile.Count == 0)
+            {
+                Debug.Log("No cards to draw");
+            }
+            else
+            {
+                DrawCards();
+            }
         }
     }
     
