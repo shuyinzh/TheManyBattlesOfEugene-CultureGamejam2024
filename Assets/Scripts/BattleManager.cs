@@ -35,7 +35,7 @@ public class BattleManager : MonoBehaviour
 
     void PlayCard(GameObject playedCard)
     {
-        Debug.Log("played card: " + playedCard);
+        Debug.Log("playing card: " + playedCard);
 
         for (int i = 0; i < Hand.Count; i++)
         {
@@ -44,9 +44,9 @@ public class BattleManager : MonoBehaviour
                 deckSystem.PlayHandCard(i);
             }
         }
+
         Player.Zeitgeist -= playedCard.GetComponent<BaseCard>().Cost;
         playedCard.GetComponent<BaseCard>().whenPlayed();
-
         // update hand
         UpdateHand();
     }
@@ -235,6 +235,7 @@ public class BattleManager : MonoBehaviour
     public void playDiscardCard()
     {
         deckSystem.DiscardHand();
+        UpdateHand();
     }
 
     public void playCharmeCard(int charmValue)

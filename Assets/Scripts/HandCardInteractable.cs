@@ -45,7 +45,7 @@ public class HandCardInteractable : MonoBehaviour
         // if card is in upper half of the screen, releasing it plays the card. otherwise it is returned to the hand.
         if (releasingPosition.y >= 0)
         {
-            Debug.Log("Realeasing card!");
+            Debug.Log("Releasing card!");
 
             if (player.HasSufficientZeitgeist(selectedObject.GetComponent<BaseCard>().Cost))
             {

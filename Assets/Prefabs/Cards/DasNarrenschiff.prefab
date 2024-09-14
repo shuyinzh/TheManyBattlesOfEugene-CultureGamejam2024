@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 5536526282661329991}
   - component: {fileID: 6791454070599471243}
   - component: {fileID: 7280481279819345259}
-  - component: {fileID: 4684559724025091092}
+  - component: {fileID: 8403968027136599061}
   m_Layer: 8
   m_Name: DasNarrenschiff
   m_TagString: Untagged
@@ -782,7 +782,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
---- !u!114 &4684559724025091092
+--- !u!114 &8403968027136599061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -791,14 +791,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7284172791928210970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d28623b0cf46f698b6748e03126052, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a656f62e1e444f30bdc33cc1962e20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Cost: 1
   battleManager: {fileID: 0}
-  cards:
-  - {fileID: 5745153256342186872}
-  - {fileID: 2391094479942627724}
+  drawValue: 3
 --- !u!1 &7837087805160837913
 GameObject:
   m_ObjectHideFlags: 0

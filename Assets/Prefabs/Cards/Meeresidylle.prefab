@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4888034032801808296}
   - component: {fileID: -4390247758835178630}
   - component: {fileID: -5456417373839417292}
-  - component: {fileID: 3434664825701161888}
+  - component: {fileID: 6205925863649583249}
   m_Layer: 8
   m_Name: Meeresidylle
   m_TagString: Untagged
@@ -149,7 +149,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.24, y: 8.26}
   m_EdgeRadius: 0
---- !u!114 &3434664825701161888
+--- !u!114 &6205925863649583249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,14 +158,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2266486868496620736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d28623b0cf46f698b6748e03126052, type: 3}
+  m_Script: {fileID: 11500000, guid: ac604ac2621be4a0c97085812b6bf954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Cost: 1
   battleManager: {fileID: 0}
-  cards:
-  - {fileID: 1651977265757573751}
-  - {fileID: 918698476172755395}
+  zeitgeistValue: 2
+  drawValue: 1
 --- !u!1 &2870767313659555133
 GameObject:
   m_ObjectHideFlags: 0
