@@ -96,6 +96,5 @@ public class DeckSystem : MonoBehaviour
         Hand.Clear();
         DrawPile.AddRange(Deck);
         ShuffleDrawPile();
-        DrawCards();
     }
 }
