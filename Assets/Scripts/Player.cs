@@ -37,7 +37,6 @@ public class Player : MonoBehaviour
 
     public void StartRound()
     {
-        Start();
         Zeitgeist = (int)Math.Ceiling((BaseZeitgeist + AdditionalZeitgeist) * ZeitgeistModifier);
         AdditionalZeitgeist = 0;
         ZeitgeistModifier = 1.0;

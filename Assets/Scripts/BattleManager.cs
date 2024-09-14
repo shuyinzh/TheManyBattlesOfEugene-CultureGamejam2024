@@ -59,37 +59,16 @@ public class BattleManager : MonoBehaviour
         Enemy.StartMatch();
 
         onPlayerRound();
-
-        {
-            // player turn
-            // draw cards
-            // player action: select, 
-            // play card, apply effect
-            // end turn -> discard hand?
-            // when attack -> eugeneAnimator.SetTrigger(ATTACK)
-            // when enemy defense -> enemyAnitmaor.SetTrigger(DEFENSE)
-
-
-            // eugene action
-
-            // enemy action, apply effects
-        }
     }
 
     // Call on player turn
     void onPlayerRound()
     {
-        Player.StartRound();
-
-        UpdateHand();
-
-        NpcApplyEffects();
+        SetNpcIntents();
     }
 
     void NpcApplyEffects()
     {
-        SetNpcIntents();
-
         Eugene.StartRound();
         Enemy.StartRound();
     }
@@ -109,7 +88,12 @@ public class BattleManager : MonoBehaviour
     private IEnumerator setEnemyIntent()
     {
         Enemy.CreateRandomIntent();
-        yield return null;
+        yield return new WaitForSeconds(8f);
+
+        Player.StartRound();
+        UpdateHand();
+
+        NpcApplyEffects();
     }
 
     // Call on npc turn
