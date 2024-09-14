@@ -1209,21 +1209,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Deck:
-  - {fileID: 4987567369015087792, guid: af4c218b1ab20419ba755c58f62eaa20, type: 3}
   - {fileID: 7284172791928210970, guid: e5eb105f68de046bb974e44cb7bfdb9c, type: 3}
   - {fileID: 7522721459932201347, guid: 5f8abe024eaa34507bc371f9d5887ddb, type: 3}
+  - {fileID: 7522721459932201347, guid: 5f8abe024eaa34507bc371f9d5887ddb, type: 3}
   - {fileID: 6780665972070881515, guid: fbd07361df5fe453d8110c35a9e1a331, type: 3}
-  - {fileID: 6134320873080495690, guid: db2d98df75aa249e0a4e2c46dfd4eae3, type: 3}
+  - {fileID: 6780665972070881515, guid: fbd07361df5fe453d8110c35a9e1a331, type: 3}
+  - {fileID: 6780665972070881515, guid: fbd07361df5fe453d8110c35a9e1a331, type: 3}
+  - {fileID: 6780665972070881515, guid: fbd07361df5fe453d8110c35a9e1a331, type: 3}
+  - {fileID: 4231247820201864888, guid: e08f9fce71632402ba0f63aeaa327afd, type: 3}
+  - {fileID: 4231247820201864888, guid: e08f9fce71632402ba0f63aeaa327afd, type: 3}
+  - {fileID: 4231247820201864888, guid: e08f9fce71632402ba0f63aeaa327afd, type: 3}
   - {fileID: 4231247820201864888, guid: e08f9fce71632402ba0f63aeaa327afd, type: 3}
   - {fileID: 2687611264887504103, guid: c54dc3eecd85e4c6a9ea1d886599c20e, type: 3}
-  - {fileID: 3967289286662263859, guid: 28cf6e2d4bfb045be8c2b576a1938ab5, type: 3}
-  - {fileID: 6014677488947998327, guid: 07f435691b12142dcbe1cc329342bf9d, type: 3}
-  - {fileID: 3381931537610566892, guid: a80a3789cc906435f8ee891aa577d1fd, type: 3}
-  - {fileID: 6948226620121781133, guid: 0f7b7eff6c98e4124b39e4df4f986653, type: 3}
+  - {fileID: 2687611264887504103, guid: c54dc3eecd85e4c6a9ea1d886599c20e, type: 3}
   - {fileID: 2266486868496620736, guid: 79e5ec2817bee42f9802ccdba86416b0, type: 3}
-  - {fileID: 4448849557076395434, guid: fdd19d36d0fc446d7bd4c2bdcd99f07f, type: 3}
+  - {fileID: 2266486868496620736, guid: 79e5ec2817bee42f9802ccdba86416b0, type: 3}
+  - {fileID: 2266486868496620736, guid: 79e5ec2817bee42f9802ccdba86416b0, type: 3}
+  - {fileID: 2266486868496620736, guid: 79e5ec2817bee42f9802ccdba86416b0, type: 3}
+  - {fileID: 2266486868496620736, guid: 79e5ec2817bee42f9802ccdba86416b0, type: 3}
+  - {fileID: 2266486868496620736, guid: 79e5ec2817bee42f9802ccdba86416b0, type: 3}
   - {fileID: 3639169051094568345, guid: 17d32bc99662d45eb94cbaf33ba1a263, type: 3}
-  - {fileID: 3913218541836817019, guid: 192d35147b158460f9805702ae228c49, type: 3}
+  - {fileID: 3639169051094568345, guid: 17d32bc99662d45eb94cbaf33ba1a263, type: 3}
+  - {fileID: 3639169051094568345, guid: 17d32bc99662d45eb94cbaf33ba1a263, type: 3}
+  - {fileID: 3639169051094568345, guid: 17d32bc99662d45eb94cbaf33ba1a263, type: 3}
   DrawPile: []
   Hand: []
   DiscardPile: []
