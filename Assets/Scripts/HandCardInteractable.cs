@@ -9,11 +9,19 @@ public class HandCardInteractable : MonoBehaviour
     public Player player;
     Vector3 originalPosition;
     Vector3 offset;
+    private GameObject glowObject;
     
     public static event Action<GameObject> OnCardPlayed;
 
+    void Start()
+    {
+        glowObject = transform.Find("Glow").gameObject;
+    }
+
     void Update()
     {
+        GlowIfPlayable();
+
         // click and drag
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -47,10 +55,9 @@ public class HandCardInteractable : MonoBehaviour
         {
             Debug.Log("Releasing card!");
 
-            if (player.HasSufficientZeitgeist(selectedObject.GetComponent<BaseCard>().Cost))
+            if (IsPlayable(selectedObject))
             {
                 // play card
-                // TODO: visual feedback - green shimmer?
                 Debug.Log("Can play card! Cost: " + selectedObject.GetComponent<BaseCard>().Cost + " Current Zeitgeist: " + player.Zeitgeist);
                 OnCardPlayed?.Invoke(selectedObject);
                 selectedObject.transform.position = originalPosition - new Vector3(-5f, 5f, 0); // TODO animate being put in discard pile
@@ -63,14 +70,21 @@ public class HandCardInteractable : MonoBehaviour
                 selectedObject.transform.position = originalPosition;
                 selectedObject = null;
             }
-
-
-
         }
         else
         {
             selectedObject.transform.position = originalPosition;
             selectedObject = null;
         }
+    }
+
+    void GlowIfPlayable()
+    {
+        glowObject.SetActive(IsPlayable(transform.gameObject));
+    }
+
+    bool IsPlayable(GameObject card)
+    {
+        return player.HasSufficientZeitgeist(card.GetComponent<BaseCard>().Cost);
     }
 }

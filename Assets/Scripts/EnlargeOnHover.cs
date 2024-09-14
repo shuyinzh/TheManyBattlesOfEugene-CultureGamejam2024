@@ -32,8 +32,8 @@ public class EnlargeOnHover : MonoBehaviour
             isCardInHand = true;
         }
         ownRenderer = GetComponent<SpriteRenderer>();
-        artworkRenderer = transform.FindChild("Artwork").GetComponent<SpriteRenderer>();
-        canvasRenderer = transform.FindChild("Canvas").GetComponent<Canvas>();
+        artworkRenderer = transform.Find("Artwork").GetComponent<SpriteRenderer>();
+        canvasRenderer = transform.Find("Canvas").GetComponent<Canvas>();
         originalSortingLayerName = ownRenderer.sortingLayerName;
     }
 
