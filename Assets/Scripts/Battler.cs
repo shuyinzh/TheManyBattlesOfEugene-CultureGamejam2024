@@ -51,12 +51,7 @@ public abstract class Battler : MonoBehaviour
     public void StartRound()
     {
         AdditionalAttack = 0;
-        Defense = 0;
         AttackModifier = 1.0;
-        if (CurrentIntent == Intent.Defend)
-        {
-            Defense += AdditionalDefenseOnDefense;
-        }
 
         if (sleep > 0)
         {

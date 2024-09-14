@@ -132,6 +132,7 @@ public class BattleManager : MonoBehaviour
             {
                 eugeneAnimator.SetTrigger(DEFENSE);
                 yield return new WaitForSeconds(2f);
+                Eugene.Defense += Eugene.AdditionalDefenseOnDefense;
             }
         }
 
