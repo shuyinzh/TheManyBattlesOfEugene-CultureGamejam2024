@@ -9,6 +9,7 @@ using TMPro;
 
 public class TauntGenerator : MonoBehaviour
 {
+    private string generatedText = "";
     private string voice = "echo"; // Voice selection, modify as necessary
     private string model = "tts-1";
     public AudioSource audioSource;
@@ -57,7 +58,7 @@ public class TauntGenerator : MonoBehaviour
     public void GenerateTaunt(currentBattle eI)
     {
         StartCoroutine(SendOpenAIRequest(
-            "I need a one liner taunt or joke from the perspective of Eugene von Savoyen, please make it up to 10 words long and don't add anything but the joke/taunt, no parenthesis, no formatting, no apostrophes, just the quote, as an added context of who to taunt and of the situation Eugen is in, use this: " +
+            "I need a one liner taunt or joke from the perspective of Eugene von Savoyen, please make it up to 10 words long and don't add anything but the joke/taunt, no parenthesis, no formatting, no apostrophes, just the quote, as an added context of who to taunt and of the situation Eugene is in, use this: " +
             extraInfo[eI] +
             " Like I said, only the taunt/joke, this is very important and up to 10 words and end with three exclamation marks!",
             "echo"));
@@ -112,6 +113,7 @@ public class TauntGenerator : MonoBehaviour
     // Coroutine to send the request
     private IEnumerator SendOpenAIRequest(string prompt, string voiceModel)
     {
+        generatedText = "";
         // Create the request data
         var jsonBody = new JObject
         {
@@ -149,10 +151,7 @@ public class TauntGenerator : MonoBehaviour
             string jsonResponse = request.downloadHandler.text;
             JObject responseObj = JObject.Parse(jsonResponse);
 
-            string generatedText = responseObj["choices"][0]["message"]["content"].ToString();
-            speechBubble.SetActive(true);
-            speechBubbleText.text = generatedText;
-            StartCoroutine(removeSpeechBubble());
+            generatedText = responseObj["choices"][0]["message"]["content"].ToString();
             Debug.Log("Generated Text: " + generatedText);
             GenerateSpeech(generatedText, voiceModel);
         }
@@ -223,6 +222,9 @@ public class TauntGenerator : MonoBehaviour
                 AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
                 audioSource.clip = clip;
                 audioSource.Play();
+                speechBubble.SetActive(true);
+                speechBubbleText.text = generatedText;
+                StartCoroutine(removeSpeechBubble());
             }
         }
     }
