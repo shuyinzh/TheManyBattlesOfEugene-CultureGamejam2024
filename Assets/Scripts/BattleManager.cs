@@ -85,13 +85,9 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     private void UpdateHand()
     {
+        ClearHand();
         Hand = deckSystem.Hand;
         for (int i = 0; i < Hand.Count; i++)
         {
@@ -102,6 +98,15 @@ public class BattleManager : MonoBehaviour
             card.battleManager = this;
             HandCardObjects.Add(handCard);
         }
+    }
+
+    private void ClearHand()
+    {
+        foreach (GameObject o in HandCardObjects)
+        {
+            Destroy(o);
+        }
+        HandCardObjects = new List<GameObject>();
     }
 
     public void playDefenseCard(int defense)

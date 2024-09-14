@@ -39,7 +39,6 @@ public class DeckSystem : MonoBehaviour
             } else {
                 Hand.Add(drawnCard);
             }
-            
         }
         else
         {
