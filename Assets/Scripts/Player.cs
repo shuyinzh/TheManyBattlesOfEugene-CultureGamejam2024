@@ -23,12 +23,14 @@ public class Player : MonoBehaviour
         BaseZeitgeist = 3;
         AdditionalZeitgeist = 0;
         Zeitgeist = 0;
+        ZeitgeistModifier = 1.0;
     }
 
     public void StartRound()
     {
         Zeitgeist = (int)Math.Ceiling((BaseZeitgeist + AdditionalZeitgeist) * ZeitgeistModifier);
         AdditionalZeitgeist = 0;
+        ZeitgeistModifier = 1.0;
         deckSystem.DrawCards();
     }
 }
