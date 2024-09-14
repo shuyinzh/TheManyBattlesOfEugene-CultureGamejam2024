@@ -74,10 +74,20 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+// Call on player turn
+
     // Call on player turn
     void onPlayerRound()
     {
         Player.StartRound();
+        Hand = Player.deckSystem.Hand;
+
+        for (int i = 0; i < Hand.Count; i++)
+        {
+            GameObject handCard = Instantiate(Hand[i], new Vector3(-5 + i * 2.5f, -3f, 0), Quaternion.identity,
+                cardHand.transform);
+            handCard.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
+        }
 
         UpdateHand();
 
@@ -104,38 +114,59 @@ public class BattleManager : MonoBehaviour
         // discard player hand
         deckSystem.DiscardHand();
         UpdateHand();
+setupNpcTurn();
 
-        if (Eugene.CurrentIntent == Intent.Defend)
+
+        if (Eugene.CurrentIntent == Intent.Attack)
         {
-            Eugene.Defense += Eugene.AdditionalDefenseOnDefense;
-            Eugene.Defense *= Eugene.RepeatAction;
-            eugeneAnimator.SetTrigger(DEFENSE);
-        } 
-        if(Enemy.CurrentIntent == Intent.Defend)
-        {
-            Enemy.Defense += Enemy.AdditionalDefenseOnDefense;
-            Enemy.Defense *= Enemy.RepeatAction;
-            enemyAnimator.SetTrigger(DEFENSE);
-        }
-        
-        if(Eugene.CurrentIntent == Intent.Attack)
-        {
-            for(int i = 0; i < Eugene.RepeatAction; i++)
+            for (int i = 0; i < Eugene.RepeatAction; i++)
             {
+                if (!Enemy.isTaunted)
+                {
+                    Eugene.AttackModifier = 0; // Remove this if it's not the mother
+                }
+
+
+
                 Eugene.Attack(Enemy);
                 eugeneAnimator.SetTrigger(ATTACK);
+                if (Enemy.CurrentIntent == Intent.Defend)
+                {
+                    
+                    enemyAnimator.SetTrigger(DEFENSE);
+                }
             }
-            
         }
+
         if (Enemy.CurrentIntent == Intent.Attack)
         {
-            for(int i = 0; i < Enemy.RepeatAction; i++)
+            for (int i = 0; i < Enemy.RepeatAction; i++)
             {
+                if(Eugene.CurrentIntent == Intent.Defend)
+                {
+                    eugeneAnimator.SetTrigger(DEFENSE);
+                }
                 Enemy.Attack(Eugene);
                 enemyAnimator.SetTrigger(ATTACK);
             }
         }
     }
+
+    private void setupNpcTurn()
+    {
+        if (Eugene.CurrentIntent == Intent.Defend)
+        {
+            Eugene.Defense += Eugene.AdditionalDefenseOnDefense;
+            Eugene.Defense *= Eugene.RepeatAction;
+        }
+
+        if (Enemy.CurrentIntent == Intent.Defend)
+        {
+            Enemy.Defense += Enemy.AdditionalDefenseOnDefense;
+            Enemy.Defense *= Enemy.RepeatAction;
+        }
+    }
+
     
     private void UpdateHand()
     {
@@ -143,7 +174,8 @@ public class BattleManager : MonoBehaviour
         Hand = deckSystem.Hand;
         for (int i = 0; i < Hand.Count; i++)
         {
-            GameObject handCard = Instantiate(Hand[i], new Vector3(-5+i*2.5f,-3f,0), Quaternion.identity, cardHand.transform);
+            GameObject handCard = Instantiate(Hand[i], new Vector3(-5 + i * 2.5f, -3f, 0), Quaternion.identity,
+                cardHand.transform);
             handCard.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
             handCard.AddComponent<HandCardInteractable>();
             var card = handCard.GetComponent<BaseCard>();
@@ -158,6 +190,7 @@ public class BattleManager : MonoBehaviour
         {
             Destroy(o);
         }
+
         HandCardObjects = new List<GameObject>();
     }
 
@@ -228,5 +261,11 @@ public class BattleManager : MonoBehaviour
     public void playSleepCard(int sleepValue)
     {
         Enemy.sleep += sleepValue;
+    }
+
+    public void playTauntCard(int tauntValue)
+    {
+        Enemy.taunted += tauntValue;
+        Enemy.SwitchIntent(Intent.Attack);
     }
 }
