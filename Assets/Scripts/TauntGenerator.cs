@@ -168,7 +168,7 @@ public class TauntGenerator : MonoBehaviour
 
     private IEnumerator removeSpeechBubble()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         speechBubbleText.text = "";
         speechBubble.SetActive(false);
     }
@@ -238,5 +238,6 @@ public class TauntGenerator : MonoBehaviour
     private void Start()
     {
         speechBubble.SetActive(false);
+        GenerateTaunt(currentBattle.Battle1);
     }
 }
