@@ -13,6 +13,7 @@ public enum Intent
 
 public abstract class Battler : MonoBehaviour
 {
+    public Animator cameraAnimator;
     public SpriteRenderer spriteRenderer;
     public String characterName;
     public TauntGenerator TauntGenerator;
@@ -149,6 +150,7 @@ public abstract class Battler : MonoBehaviour
 
     private IEnumerator damageIndication()
     {
+        cameraAnimator.SetTrigger("ScreenShake");
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.3f);
         spriteRenderer.color = Color.white;
