@@ -19,6 +19,11 @@ public class BattleManager : MonoBehaviour
     public NPC Enemy;
     public GameObject cardHand;
 
+    private const string ATTACK = "attack";
+    private const string DEFENSE = "defense";
+    public Animator eugeneAnimator;
+    public Animator enemyAnimator;
+
     public List<GameObject> Hand = new List<GameObject>();
 
     private BattleState state = BattleState.Initial;
@@ -48,6 +53,8 @@ public class BattleManager : MonoBehaviour
                 // player action: select, 
                 // play card, apply effect
                 // end turn -> discard hand?
+                // when attack -> eugeneAnimator.SetTrigger(ATTACK)
+                // when enemy defense -> enemyAnitmaor.SetTrigger(DEFENSE)
 
             // eugene action
 

@@ -12,9 +12,11 @@ public enum DeckType
 
 public class ShowCards : MonoBehaviour
 {
-    Vector3 firstCardPosition = new Vector3(0, 0, 1);
+    Vector3 firstCardPosition = new Vector3(-6.25f, 1.5f, 1);
     public DeckSystem deckSystem;
     public DeckType deckType;
+
+    private float cardsInOneRow = 6f;
 
     void Start()
     {
@@ -34,8 +36,7 @@ public class ShowCards : MonoBehaviour
 
         for (int i = 0; i < cards.Count; i++)
         {
-            Debug.Log(cards[i].name + ", position: " + (firstCardPosition + new Vector3((i % 7) * 20, (float) Math.Floor(i/7.0f) * 10, 0)));
-            GameObject o = Instantiate(cards[i], firstCardPosition + new Vector3((i % 7) * 100, (float) Math.Floor(i/7.0f) * 50, 0), Quaternion.identity, transform);
+            GameObject o = Instantiate(cards[i], firstCardPosition + new Vector3((i % cardsInOneRow) * 2.5f, (float) Math.Floor(i/cardsInOneRow) * -3.5f, 0), Quaternion.identity, transform);
             o.GetComponent<SpriteRenderer>().sortingLayerName = "Overlay";
             o.transform.Find("Artwork").GetComponent<SpriteRenderer>().sortingLayerName = "Overlay";
             o.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
