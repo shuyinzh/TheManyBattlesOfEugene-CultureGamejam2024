@@ -19,6 +19,6 @@ public class BuffDisplay : MonoBehaviour
     void Update()
     {
         attack.text = "+" + battler.AdditionalAttack + (battler.AttackModifier > 1.0 ? ("*" + (int)battler.AttackModifier) : "");
-        defense.text = "+" + battler.AdditionalDefenseOnDefense; 
+        defense.text = battler.Defense.ToString(); 
     }
 }
