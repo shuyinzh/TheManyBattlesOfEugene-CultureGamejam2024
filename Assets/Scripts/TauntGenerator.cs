@@ -238,6 +238,5 @@ public class TauntGenerator : MonoBehaviour
     private void Start()
     {
         speechBubble.SetActive(false);
-        GenerateTaunt(currentBattle.Battle1);
     }
 }
