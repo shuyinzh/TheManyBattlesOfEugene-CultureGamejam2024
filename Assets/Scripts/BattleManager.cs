@@ -137,6 +137,8 @@ public class BattleManager : MonoBehaviour
                 enemyAnimator.SetTrigger(ATTACK);
             }
         }
+        // Wait for animation to finish
+        Invoke("onPlayerRound", 2);
     }
 
     private void setupNpcTurn()

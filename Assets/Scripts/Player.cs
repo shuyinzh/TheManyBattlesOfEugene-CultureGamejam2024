@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        deckSystem = GetComponent<DeckSystem>();
+        //deckSystem = GetComponent<DeckSystem>();
     }
 
     public void StartMatch()
@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 
     public void StartRound()
     {
+        Start();
         Zeitgeist = (int)Math.Ceiling((BaseZeitgeist + AdditionalZeitgeist) * ZeitgeistModifier);
         AdditionalZeitgeist = 0;
         ZeitgeistModifier = 1.0;

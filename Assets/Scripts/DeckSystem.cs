@@ -7,9 +7,7 @@ using Random = UnityEngine.Random;
 public class DeckSystem : MonoBehaviour
 {
     public List<GameObject> Deck;
-    private const int MAX_HAND_SIZE = 5;
-    private const int MIN_DECK_SIZE = 5;
-    private const int MAX_DECK_SIZE = 10;
+    private const int STARTING_HAND_SIZE = 5;
     
     
     public List<GameObject> DrawPile = new();
@@ -17,7 +15,7 @@ public class DeckSystem : MonoBehaviour
     public List<GameObject> DiscardPile = new();
 
     
-    public void DrawCards(int numCards = MAX_HAND_SIZE)
+    public void DrawCards(int numCards = STARTING_HAND_SIZE)
     {
         for (int i = 0; i < numCards; i++)
         {
@@ -33,12 +31,7 @@ public class DeckSystem : MonoBehaviour
             Debug.Log("" + drawnCard.name);
             DrawPile.RemoveAt(0);
             Debug.Log("Drawn card: " + drawnCard);
-            if (Hand.Count >= MAX_HAND_SIZE)
-            {
-                DiscardPile.Add(drawnCard);
-            } else {
-                Hand.Add(drawnCard);
-            }
+            Hand.Add(drawnCard);
         }
         else
         {
