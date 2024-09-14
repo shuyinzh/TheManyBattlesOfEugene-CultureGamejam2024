@@ -52,7 +52,6 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         Player.StartMatch();
-        UpdateHand();
         
         Eugene.StartMatch();
         Enemy.StartMatch();
@@ -74,20 +73,13 @@ public class BattleManager : MonoBehaviour
             // enemy action, apply effects
         }
     }
-// Call on player turn
+
+    // Call on player turn
     void onPlayerRound()
     {
         Player.StartRound();
-        Hand = Player.deckSystem.Hand;
-        
-        for (int i = 0; i < Hand.Count; i++)
-        {
-            GameObject handCard = Instantiate(Hand[i], new Vector3(-5 + i * 2.5f, -3f, 0), Quaternion.identity,
-                cardHand.transform);
-            handCard.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
 
-
-        }
+        UpdateHand();
 
         NpcApplyEffects();
     }
