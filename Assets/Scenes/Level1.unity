@@ -186,6 +186,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4458072281567504046, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: battler
+      value: 
+      objectReference: {fileID: 1454479314}
+    - target: {fileID: 5535780395619973560, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 1454479314}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -747,6 +755,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4458072281567504046, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: battler
+      value: 
+      objectReference: {fileID: 1946843357}
+    - target: {fileID: 5535780395619973560, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 1946843357}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
