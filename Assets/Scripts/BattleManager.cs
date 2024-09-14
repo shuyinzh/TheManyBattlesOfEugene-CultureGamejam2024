@@ -116,13 +116,8 @@ public class BattleManager : MonoBehaviour
         {
             for (int i = 0; i < Eugene.RepeatAction; i++)
             {
-                if (!Enemy.isTaunted)
-                {
-                    Eugene.AttackModifier = 0; // Remove this if it's not the mother
-                }
-
                 eugeneAnimator.SetTrigger(ATTACK);
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1f);
                 Eugene.Attack(Enemy);
             }
         }
