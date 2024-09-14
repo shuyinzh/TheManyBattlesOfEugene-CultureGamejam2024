@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public int BaseZeitgeist = 3;
     public int AdditionalZeitgeist = 0;
     public int Zeitgeist = 0;
+    
 
     public double ZeitgeistModifier = 1.0;
 

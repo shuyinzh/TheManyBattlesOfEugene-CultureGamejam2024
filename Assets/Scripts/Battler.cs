@@ -16,7 +16,7 @@ public abstract class Battler : MonoBehaviour
     public Health Health;
     public string Name;
 
-    public int AdditionalDefenseOnDefense = 1;
+    public int AdditionalDefenseOnDefense = 0;
     public int Defense = 0;
 
     public int BaseAttack = 1;
