@@ -43,6 +43,7 @@ public class BattleManager : MonoBehaviour
                 deckSystem.PlayHandCard(i);
             }
         }
+        Player.Zeitgeist -= playedCard.GetComponent<BaseCard>().Cost;
         playedCard.GetComponent<BaseCard>().whenPlayed();
 
         // update hand
@@ -166,7 +167,8 @@ public class BattleManager : MonoBehaviour
             GameObject handCard = Instantiate(Hand[i], new Vector3(-5 + i * 2.5f, -3f, 0), Quaternion.identity,
                 cardHand.transform);
             handCard.transform.Find("Canvas").GetComponent<Canvas>().overrideSorting = true;
-            handCard.AddComponent<HandCardInteractable>();
+            HandCardInteractable handCardInteractable = handCard.AddComponent<HandCardInteractable>();
+            handCardInteractable.player = Player;
             var card = handCard.GetComponent<BaseCard>();
             card.battleManager = this;
             HandCardObjects.Add(handCard);

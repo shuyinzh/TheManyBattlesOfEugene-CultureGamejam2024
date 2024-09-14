@@ -1,9 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
     public DeckSystem deckSystem;
+
+    public TMP_Text ZeitgeistText;
 
     public int BaseZeitgeist = 3;
     public int AdditionalZeitgeist = 0;
@@ -15,6 +18,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         //deckSystem = GetComponent<DeckSystem>();
+    }
+
+    void Update()
+    {
+        ZeitgeistText.text = "" + Zeitgeist;
     }
 
     public void StartMatch()
@@ -33,5 +41,10 @@ public class Player : MonoBehaviour
         AdditionalZeitgeist = 0;
         ZeitgeistModifier = 1.0;
         deckSystem.DrawCards();
+    }
+
+    public bool HasSufficientZeitgeist(int zeitgeistNeeded)
+    {
+        return Zeitgeist >= zeitgeistNeeded;
     }
 }

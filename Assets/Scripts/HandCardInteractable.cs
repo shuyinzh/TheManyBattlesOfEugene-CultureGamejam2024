@@ -6,6 +6,7 @@ using UnityEngine;
 public class HandCardInteractable : MonoBehaviour
 {
     public GameObject selectedObject;
+    public Player player;
     Vector3 originalPosition;
     Vector3 offset;
     
@@ -45,10 +46,26 @@ public class HandCardInteractable : MonoBehaviour
         if (releasingPosition.y >= 0)
         {
             Debug.Log("Realeasing card!");
-            // TODO: highlight
-            OnCardPlayed?.Invoke(selectedObject);
-            selectedObject.transform.position = originalPosition - new Vector3(-5f, 5f, 0); // TODO animate being put in discard pile
-            selectedObject = null;
+
+            if (player.HasSufficientZeitgeist(selectedObject.GetComponent<BaseCard>().Cost))
+            {
+                // play card
+                // TODO: visual feedback - green shimmer?
+                Debug.Log("Can play card! Cost: " + selectedObject.GetComponent<BaseCard>().Cost + " Current Zeitgeist: " + player.Zeitgeist);
+                OnCardPlayed?.Invoke(selectedObject);
+                selectedObject.transform.position = originalPosition - new Vector3(-5f, 5f, 0); // TODO animate being put in discard pile
+                selectedObject = null;
+            }
+            else 
+            {
+                // TODO: visual feedback - red shimmer?
+                Debug.Log("CANNOT play card! Cost: " + selectedObject.GetComponent<BaseCard>().Cost + " Current Zeitgeist: " + player.Zeitgeist);
+                selectedObject.transform.position = originalPosition;
+                selectedObject = null;
+            }
+
+
+
         }
         else
         {
