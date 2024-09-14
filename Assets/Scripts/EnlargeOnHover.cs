@@ -12,7 +12,7 @@ public class EnlargeOnHover : MonoBehaviour
     bool enlarging = false;
     bool shrinking = false;
 
-    bool isCardInHand = false;
+    bool isCardInHand = false; // TODO: if a card view modal is open, disable EnlargeOnHover for hand cards
 
     float enlargeSpeed = 5f;
     float shrinkSpeed = 7f;

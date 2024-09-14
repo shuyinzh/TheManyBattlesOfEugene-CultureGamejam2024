@@ -1,4 +1,7 @@
-﻿class DefenseCard : BaseCard
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+class DefenseCard : BaseCard
 {
     public int defenseValue;
     

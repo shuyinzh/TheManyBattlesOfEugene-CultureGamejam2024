@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 2078323717179791870}
   - component: {fileID: 4079353043474665720}
   m_Layer: 0
-  m_Name: CardInfo
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

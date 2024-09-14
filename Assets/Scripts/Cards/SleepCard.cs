@@ -1,4 +1,7 @@
-﻿public class SleepCard : BaseCard
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+public class SleepCard : BaseCard
 {
     public int sleepValue;
     

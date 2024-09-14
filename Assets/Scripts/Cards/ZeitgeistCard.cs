@@ -1,4 +1,7 @@
-﻿public class ZeitgeistCard : BaseCard
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+public class ZeitgeistCard : BaseCard
 {
     public int zeitgeistValue;
     public double zeitgeistModifier;
