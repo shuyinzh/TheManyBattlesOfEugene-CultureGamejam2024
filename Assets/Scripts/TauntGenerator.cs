@@ -10,7 +10,6 @@ public class TauntGenerator : MonoBehaviour
 {
     private string voice = "echo"; // Voice selection, modify as necessary
     private string model = "tts-1";
-    private string currentTaunt = "";
     public AudioSource audioSource;
 
     private string apiKey =
@@ -19,53 +18,104 @@ public class TauntGenerator : MonoBehaviour
     private string apiUrl = "https://api.openai.com/v1/chat/completions";
     private string TTSapiUrl = "https://api.openai.com/v1/audio/speech";
 
+    public enum characterTalking
+    {
+        Eugene,
+        Mum,
+        Granny,
+        God
+    }
+
+    public enum intentType
+    {
+        Attack,
+        Defense
+    }
 
     public enum currentBattle
     {
         Battle1,
-        Battle2,
-        Battle3,
-        Battle4,
-        Battle5
+        Battle2
     };
 
     private Dictionary<currentBattle, string> extraInfo = new Dictionary<currentBattle, string>()
     {
         {
             currentBattle.Battle1,
-            "This is Eugen's childhood, you are battling your mother who always neglected you and is rumoured to be behind a streak of poisonings of royals, you are taunting your mother"
+            "This is Eugen's childhood, Eugene is battling his mother who always neglected him and is rumoured to be behind a streak of poisonings of royals"
         },
         {
             currentBattle.Battle2,
-            "This is Eugen's youth, your over bearing and very religious granny wants you to become a priest but you refuse, you are taunting your granny and god"
-        },
-        {
-            currentBattle.Battle3,
-            "This is after your brother, Ludwig's, death. You want to take over the regiment he lead in Passau but first you have to prove yourself in the battle over Kahlenberg, you are taunting the opposing army"
-        },
-        {
-            currentBattle.Battle4,
-            "This is the Battle of Zenta, the ottoman troops are crossing a river and you have to hold them back, you are taunting the ottoman troops"
-        },
-        {
-            currentBattle.Battle5,
-            "This is the battle against Kaiser Leopold the first, who doesn't want you to get this new military rank you desire, you want his son, Jospeh to take over and give you the rank, you are taunting Kaiser Leopold I."
+            "This is Eugen's youth, his over bearing and very religious granny wants him to become a priest but he refuses"
         }
     };
 
     // Function to send a prompt and receive the response
     public void GenerateTaunt(currentBattle eI)
     {
-        currentTaunt = "";
-
         StartCoroutine(SendOpenAIRequest(
-            "I need a one liner taunt or joke from the perspective of Eugene von Savoyen, please make it up to 10 words long and don't add anything but the joke/taunt, no parenthesis, no formatting, no apostrophes, just the quote, as an added context of the situation Eugen is in, use this: " +
+            "I need a one liner taunt or joke from the perspective of Eugene von Savoyen, please make it up to 10 words long and don't add anything but the joke/taunt, no parenthesis, no formatting, no apostrophes, just the quote, as an added context of who to taunt and of the situation Eugen is in, use this: " +
             extraInfo[eI] +
-            " Like I said, only the taunt/joke, this is very important and up to 10 words and end with three exclamation marks!"));
+            " Like I said, only the taunt/joke, this is very important and up to 10 words and end with three exclamation marks!",
+            "echo"));
+    }
+
+    public void GenerateIntent(characterTalking cT, currentBattle cB, intentType iT)
+    {
+        bool requestCorrect = true;
+        string attackDefend = "";
+        string addedCharacterInfo = "";
+        string voiceModel = "echo";
+
+        if (iT == intentType.Attack)
+        {
+            attackDefend = "attack";
+        }
+        else if (iT == intentType.Defense)
+        {
+            attackDefend = "block an attack by another character";
+        }
+        else
+        {
+            requestCorrect = false;
+            Debug.LogError("Unknown intent type");
+        }
+
+        switch (cT)
+        {
+            case characterTalking.Eugene:
+                addedCharacterInfo = "Eugene von Savoyen";
+                voiceModel = "echo";
+                break;
+            case characterTalking.Mum:
+                addedCharacterInfo = "Eugene von Savoyen's mother who is rumoured to poison royals";
+                voiceModel = "nova";
+                break;
+            case characterTalking.Granny:
+                addedCharacterInfo = "Eugene von Savoyen's granny who wants Eugene to become a priest";
+                voiceModel = "alloy";
+                break;
+            case characterTalking.God:
+                addedCharacterInfo = "God, who, like Eugene von Savoyen's granny, wants Eugene to become a priest";
+                voiceModel = "onyx";
+                break;
+        }
+
+        if (requestCorrect)
+        {
+            StartCoroutine(SendOpenAIRequest(
+                "I need a one-liner quip for a video game character stating the game action they are about to perform. The game is about Eugene von Savoyen's battle against his mum, grandma and god. You are " +
+                addedCharacterInfo + " and you are about to" +
+                attackDefend +
+                " please make it up to 10 words long and don't add anything but the one-liner, no parenthesis, not formatting, no apostrophes, just the one-liner, as and added context of the situation the game is portraying right now, use this: "
+                + extraInfo[cB] +
+                " Like I said, only the one-liner, this is very important and up to 10 words only, no quotation marks! And you have to state clearly what the character is about to do i.e. blocking or attacking",
+                voiceModel));
+        }
     }
 
     // Coroutine to send the request
-    private IEnumerator SendOpenAIRequest(string prompt)
+    private IEnumerator SendOpenAIRequest(string prompt, string voiceModel)
     {
         // Create the request data
         var jsonBody = new JObject
@@ -106,22 +156,21 @@ public class TauntGenerator : MonoBehaviour
 
             string generatedText = responseObj["choices"][0]["message"]["content"].ToString();
             Debug.Log("Generated Text: " + generatedText);
-            currentTaunt = generatedText;
-            GenerateSpeech(currentTaunt);
+            GenerateSpeech(generatedText, voiceModel);
         }
     }
 
     // Function to generate speech and play it
-    public void GenerateSpeech(string text)
+    public void GenerateSpeech(string text, string voiceModel)
     {
-        StartCoroutine(SendTTSRequest(text));
+        StartCoroutine(SendTTSRequest(text, voiceModel));
     }
 
     // Coroutine to send the TTS request and handle the response
-    private IEnumerator SendTTSRequest(string inputText)
+    private IEnumerator SendTTSRequest(string inputText, string voiceModel)
     {
         // Create the JSON body with the necessary parameters
-        string jsonBody = "{\"model\":\"" + model + "\", \"voice\":\"" + voice + "\", \"input\":\"" + inputText + "\"}";
+        string jsonBody = "{\"model\":\"" + model + "\", \"voice\":\"" + voiceModel + "\", \"input\":\"" + inputText + "\"}";
 
         // Create UnityWebRequest for the POST method
         UnityWebRequest request = new UnityWebRequest(TTSapiUrl, "POST");
@@ -171,5 +220,10 @@ public class TauntGenerator : MonoBehaviour
                 audioSource.Play();
             }
         }
+    }
+
+    private void Start()
+    {
+        GenerateIntent(characterTalking.Mum, currentBattle.Battle1, intentType.Defense);
     }
 }
