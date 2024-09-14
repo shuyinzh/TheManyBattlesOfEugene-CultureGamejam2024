@@ -601,8 +601,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1821,13 +1821,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 1454479315}
   Name: Eugene's Mother
+  AdditionalDefenseOnDefense: 1
   Defense: 0
   BaseAttack: 1
   AdditionalAttack: 0
   AttackModifier: 1
   CurrentIntent: 0
   charmed: 0
-  RepeatLastAction: 0
+  RepeatAction: 0
   sleep: 0
 --- !u!114 &1454479315
 MonoBehaviour:
@@ -2219,8 +2220,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
+  m_sharedMaterial: {fileID: -528738228312755771, guid: a7eab55caeb6f47adb8463385302b2bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2410,13 +2411,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 1946843356}
   Name: BabyEugene
+  AdditionalDefenseOnDefense: 1
   Defense: 0
   BaseAttack: 1
   AdditionalAttack: 0
   AttackModifier: 1
   CurrentIntent: 0
   charmed: 0
-  RepeatLastAction: 0
+  RepeatAction: 0
   sleep: 0
 --- !u!95 &1946843358
 Animator:
