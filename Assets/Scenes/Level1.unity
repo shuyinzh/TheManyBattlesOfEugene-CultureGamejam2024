@@ -709,14 +709,6 @@ MonoBehaviour:
   DeckSystem: {fileID: 577466653}
   buttonText: {fileID: 350410124}
   DeckTextType: 0
-<<<<<<< Updated upstream
---- !u!1 &417352610 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5643951047566370545, guid: e3130b02286a0d342b34bf3af1b9e7e4, type: 3}
-  m_PrefabInstance: {fileID: 4942999}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &417352614
-=======
 --- !u!1 &367609123
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,17 +845,12 @@ CanvasRenderer:
   m_GameObject: {fileID: 367609123}
   m_CullTransparentMesh: 1
 --- !u!223 &367609127
->>>>>>> Stashed changes
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 417352610}
-=======
   m_GameObject: {fileID: 367609123}
->>>>>>> Stashed changes
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
