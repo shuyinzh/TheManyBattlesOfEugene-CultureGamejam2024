@@ -18,8 +18,7 @@ public class TauntGenerator : MonoBehaviour
     public GameObject speechBubble;
     public TMP_Text speechBubbleText;
 
-    private string apiKey =
-        "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";
+    private string apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
     private string apiUrl = "https://api.openai.com/v1/chat/completions";
     private string TTSapiUrl = "https://api.openai.com/v1/audio/speech";
