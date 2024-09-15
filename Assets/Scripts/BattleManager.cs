@@ -160,11 +160,11 @@ public class BattleManager : MonoBehaviour
 
     private void setupNpcTurn()
     {
-        if (Eugene.CurrentIntent == Intent.Defend)
-        {
-            Eugene.Defense += Eugene.AdditionalDefenseOnDefense;
-            Eugene.Defense *= Eugene.RepeatAction;
-        }
+        // if (Eugene.CurrentIntent == Intent.Defend)
+        // {
+        //     Eugene.Defense += Eugene.AdditionalDefenseOnDefense;
+        //     Eugene.Defense *= Eugene.RepeatAction;
+        // }
 
         if (Enemy.CurrentIntent == Intent.Defend)
         {
@@ -234,7 +234,7 @@ public class BattleManager : MonoBehaviour
 
     public void playZeitgeistModifier(double zeitgeistModifier)
     {
-        Player.ZeitgeistModifier = zeitgeistModifier;
+        Player.ZeitgeistModifier *= zeitgeistModifier;
     }
 
     public void playIntentSwitcherCard()
