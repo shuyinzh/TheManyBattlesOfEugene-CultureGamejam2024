@@ -6,6 +6,8 @@ public class EnlargeOnHover : MonoBehaviour
 {
     Sprite sprite;
     Sprite highlightSprite;
+    
+    Vector3 originalPosition;
     Vector3 originalScale;
     Vector3 enlargedScale;
 
@@ -28,6 +30,7 @@ public class EnlargeOnHover : MonoBehaviour
     void Start()
     {
         originalScale = transform.localScale;
+        originalPosition = transform.position;
         enlargedScale = originalScale * 1.8f;
         if (transform.parent.name == "CardHand")
         {
@@ -57,6 +60,8 @@ public class EnlargeOnHover : MonoBehaviour
             }
             else 
             {
+                transform.localScale = enlargedScale;
+                
                 enlarging = false;
             }
         }
@@ -72,6 +77,8 @@ public class EnlargeOnHover : MonoBehaviour
             }
             else 
             {
+                transform.localScale = originalScale;
+                transform.position = originalPosition;
                 shrinking = false;
             }
         }
