@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     {
         ZeitgeistText.text = "" + Zeitgeist;
         if(Zeitgeist >= 10)
-            ZeitgeistText.fontSize = 110;
+            ZeitgeistText.fontSize = 90;
         else 
             ZeitgeistText.fontSize = 150;
     }
