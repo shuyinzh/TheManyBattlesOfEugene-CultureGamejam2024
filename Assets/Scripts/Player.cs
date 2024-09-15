@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         ZeitgeistText.text = "" + Zeitgeist;
+        if(Zeitgeist >= 10)
+            ZeitgeistText.fontSize = 110;
+        else 
+            ZeitgeistText.fontSize = 150;
     }
 
     public void StartMatch()
