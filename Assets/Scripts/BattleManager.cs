@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BattleManager : MonoBehaviour
     public NPC Enemy;
     public GameObject cardHand;
     public DeckSystem deckSystem;
+    public Button button;
 
     private const string ATTACK = "attack";
     private const string DEFENSE = "defense";
@@ -21,7 +23,7 @@ public class BattleManager : MonoBehaviour
 
     public List<GameObject> Hand = new List<GameObject>();
     public List<GameObject> HandCardObjects = new List<GameObject>();
-
+    public bool canEndTurn = false;
 
     private void OnEnable()
     {
@@ -49,6 +51,11 @@ public class BattleManager : MonoBehaviour
         playedCard.GetComponent<BaseCard>().whenPlayed();
         // update hand
         UpdateHand();
+    }
+
+    void Update()
+    {
+        button.interactable = canEndTurn;
     }
 
     void Start()
@@ -95,11 +102,13 @@ public class BattleManager : MonoBehaviour
         UpdateHand();
 
         NpcApplyEffects();
+        canEndTurn = true;
     }
 
     // Call on npc turn
     public void onNpcTurn()
     {
+        canEndTurn = false;
         // discard player hand
         deckSystem.DiscardHand();
         UpdateHand();

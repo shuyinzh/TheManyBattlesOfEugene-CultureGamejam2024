@@ -1794,10 +1794,12 @@ MonoBehaviour:
   Enemy: {fileID: 1454479314}
   cardHand: {fileID: 1182179991}
   deckSystem: {fileID: 577466653}
+  button: {fileID: 1884380211}
   eugeneAnimator: {fileID: 1946843358}
   enemyAnimator: {fileID: 1454479316}
   Hand: []
   HandCardObjects: []
+  canEndTurn: 0
 --- !u!1 &1237557689
 GameObject:
   m_ObjectHideFlags: 0
