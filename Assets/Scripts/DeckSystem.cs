@@ -8,21 +8,22 @@ public class DeckSystem : MonoBehaviour
 {
     public List<GameObject> Deck;
     private const int STARTING_HAND_SIZE = 5;
-    
-    
+
+
     public List<GameObject> DrawPile = new();
     public List<GameObject> Hand = new();
     public List<GameObject> DiscardPile = new();
 
-    
+
     public void DrawCards(int numCards = STARTING_HAND_SIZE)
     {
         for (int i = 0; i < numCards; i++)
         {
+            
             DrawCard();
         }
     }
-   
+
     public void DrawCard()
     {
         if (DrawPile.Count > 0)
@@ -36,24 +37,24 @@ public class DeckSystem : MonoBehaviour
         else
         {
             ShuffleDiscardPileIntoDeck();
-            if(DrawPile.Count == 0)
+            if (DrawPile.Count == 0)
             {
                 Debug.Log("No cards to draw");
             }
             else
             {
-                DrawCards();
+                DrawCard();
             }
         }
     }
-    
+
     public void ShuffleDiscardPileIntoDeck()
     {
         DrawPile.AddRange(DiscardPile);
         DiscardPile.Clear();
         ShuffleDrawPile();
     }
-    
+
     public void ShuffleDrawPile()
     {
         for (int i = 0; i < DrawPile.Count; i++)
@@ -64,8 +65,8 @@ public class DeckSystem : MonoBehaviour
             DrawPile[randomIndex] = temp;
         }
     }
-    
-    
+
+
     public void PlayHandCard(int index)
     {
         if (index >= 0 && index < Hand.Count)
@@ -75,7 +76,7 @@ public class DeckSystem : MonoBehaviour
             DiscardPile.Add(card);
         }
     }
-    
+
     public void DiscardHand()
     {
         DiscardPile.AddRange(Hand);
